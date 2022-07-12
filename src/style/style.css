@@ -19,13 +19,45 @@
 
 .segundo_colunm-form {
   display: flex;
+  width: 50%;
   height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .colunm-form {
   display: flex;
+  flex-direction: column;
+  width: 23.5em;
 }
 
-.div-form {
-  display: flex;
+.typing-Box {
+  background-color: var(--grey-5);
+  padding: 10px;
+  border-radius: 0.25em;
+  height: 2.5em;
+  border: 0.125em solid var(--grey-5);
+}
+
+.button_login {
+  background-color: var(--primary-1);
+  margin-top: 2.25em;
+  padding: 0px;
+  height: 2.5em;
+  border: 0.125em solid var(--primary-1);
+  border-radius: 0.5em;
+  color: white;
+  cursor: pointer;
+}
+
+.text_login-usuario {
+  margin-bottom: 0.5em;
+}
+.text_login-senha {
+  margin-top: 1.375em;
+  margin-bottom: 0.5em;
+}
+.login_title {
+  margin-bottom: 2em;
 }
