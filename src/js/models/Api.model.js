@@ -1,4 +1,4 @@
-export default class LoginRequest {
+export default class Api {
     static url = "https://habits-kenzie.herokuapp.com/api/userLogin";
   
     static async loginUser(loginData) {
