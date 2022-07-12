@@ -69,7 +69,8 @@
 }
 
 .text-2--500 {
-  font-weight: 500;
+    font-weight: 500;
+    color: var(--grey-2);
 }
 
 .text-3 {
