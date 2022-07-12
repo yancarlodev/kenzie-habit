@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="../style/components.css">
         <link rel="stylesheet" href="../style/style.css">
         <link rel="icon" href="../assets/icon/favicon.svg">
+        <link rel="stylesheet" href="../style/modalCreateHabit.css">
         <script src="https://kit.fontawesome.com/6250bf60ea.js" crossorigin="anonymous"></script>
         <script defer type="module" src="../js/scripts/homepage.js"></script>
         <title>Kenzie Habit</title>
@@ -44,5 +45,27 @@
                 </div>
             </div>
         </header>
+        <section class="container_modal-criar-habito hidden" >
+            <div class="container_crair-habito-form">
+              <form class="modal-crair-habito-form" action="" type="submit">
+                <h2 class="title-4 criar-habito_title-primary" >Criar hábito</h2>
+      
+                <label class="second_habit_title" for="">Titulo</label>
+                <input class="input" type="text" name="habit_title" id="habit_title" placeholder="Digitar título"/>
+      
+                <label class="third_habit_title" for="">Descrição</label>
+                <textarea class="input" name="habit_description" id="habit_description" cols="30" rows="3" placeholder="Digitar descrição"></textarea>
+      
+                <label class="fouth_habit_title" for="">Categoria</label>
+                <select class="input" name="habit_category" id="habit_category">
+                    <option value="Saúde">Saúde</option>
+                    <option value="trabalho">Trabalho</option>
+                    <option value="lazer">Lazer</option>
+                </select>
+      
+                <button class="button" type="submit">Inserir</button>
+              </form>
+            </div>
+          </section>
     </body>
 </html>
