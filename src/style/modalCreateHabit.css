@@ -31,3 +31,10 @@
 .hidden{
     display: none;
 }
+
+.fa-x {
+  margin-left: 300px;
+  color: gray;
+  size: 20px;
+  cursor: pointer;
+}
