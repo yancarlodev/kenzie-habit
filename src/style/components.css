@@ -269,3 +269,32 @@
     top: 0;
 }
 
+.pop-up {
+  width: 453px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: #E6F8EE;
+  border: 2px solid #56CF8E;
+  padding: 26px 20px;
+  border-radius: 8px;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: #56CF8E;
+  border-radius: 50%;
+}
+
+.fa-check {
+  font-size: 32px;
+  color: white;
+}
+
+.pop-up__info {
+  gap: 6px;
+}
