@@ -19,8 +19,9 @@
   align-items: center;
   position: relative;
 }
+
 .first-column_content{
-    height: 100%;
+  height: 100%;
 }
 .first_colunm-info {
   border-radius: 7px 0px 0px 7px;
@@ -44,74 +45,119 @@
   color: #ffff;
 }
 
+.segundo_colunm-form {
+  display: flex;
+  width: 50%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.colunm-form {
+  display: flex;
+  flex-direction: column;
+  width: 23.5em;
+}
+
+.typing-Box {
+  background-color: var(--grey-5);
+  padding: 10px;
+  border-radius: 0.25em;
+  height: 2.5em;
+  border: 0.125em solid var(--grey-5);
+}
+
+.button_login {
+  background-color: var(--primary-1);
+  margin-top: 2.25em;
+  padding: 0px;
+  height: 2.5em;
+  border: 0.125em solid var(--primary-1);
+  border-radius: 0.5em;
+  color: white;
+  cursor: pointer;
+}
+
+.text_login-usuario {
+  margin-bottom: 0.5em;
+}
+.text_login-senha {
+  margin-top: 1.375em;
+  margin-bottom: 0.5em;
+}
+.login_title {
+  margin-bottom: 2em;
+}
+
 .wrapper__header {
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 35px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 35px;
 }
 
 figure {
-    margin: 0;
+  margin: 0;
 }
 
 .wrapper__header--img {
-    justify-content: flex-end;
-    margin-left: 38%;
-    width: 10%;
+  justify-content: flex-end;
+  margin-left: 38%;
+  width: 10%;
 }
 
 .wrapper__header--img img {
-    margin-bottom: 7px;
-    width: 33px;
-    height: 33px;
-    border: solid 2px var(--primary-1);
-    border-radius: 50px;
+  margin-bottom: 7px;
+  width: 33px;
+  height: 33px;
+  border: solid 2px var(--primary-1);
+  border-radius: 50px;
 }
 
 
 .wrapper__header--logo h1{
-    margin-top: 11px;
-    align-items: center;
-    margin-bottom: 21px;
-    font-weight: 700;
-    font-size: 19px;
-    margin-left: 24px;
-    color: var(--primary-1);
+  margin-top: 11px;
+  align-items: center;
+  margin-bottom: 21px;
+  font-weight: 700;
+  font-size: 19px;
+  margin-left: 24px;
+  color: var(--primary-1);
 }
 
 .wrapper__sub-header {
-    display: flex;
-    background-color: var(--primary-1);
-    height: 114px;
+  display: flex;
+  background-color: var(--primary-1);
+  height: 114px;
 }
 
 .wrapper__sub-header--img {
-    height: 110px;
-    margin: 13px;
-    margin-left: 19px;
-    margin-top: 15px;
-    margin-right: 20px;
+  height: 110px;
+  margin: 13px;
+  margin-left: 19px;
+  margin-top: 15px;
+  margin-right: 20px;
 }
 
 .wrapper__sub-header--img img{
-    width: 45px;
-    height: 45px;
-    margin-bottom: 25px;
+  width: 45px;
+  height: 45px;
+  margin-bottom: 25px;
 }
 
 .wrapper__sub-header .user-name{
-    margin-top: 26px;
-    color: var(--grey-6);
-    font-size: 16px;
-    font-weight: 500;
+  margin-top: 26px;
+  color: var(--grey-6);
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .wrapper__sub-header .user-description {
-    color: var(--grey-6);
-    font-size: 11px;
-    margin-top: 10px;
+  color: var(--grey-6);
+  font-size: 11px;
+  margin-top: 10px;
 }
 
 
@@ -139,37 +185,36 @@ figure {
     .wrapper__sub-header--username p{
         margin-top: 20px;
     }
-
 }
 
 @media (min-width: 900px) {
-    .wrapper__header--img {
-        margin-left: 67%;
-    }
+  .wrapper__header--img {
+      margin-left: 67%;
+  }
 
-    .wrapper__header--logo h1{
-        margin-left: 240%;
-    }
+  .wrapper__header--logo h1{
+      margin-left: 240%;
+  }
 
-    .wrapper__sub-header {
-        height: 104px;
-    }
+  .wrapper__sub-header {
+      height: 104px;
+  }
 
-    .wrapper__sub-header--img img{
-        margin-left: 530%;
-    }
+  .wrapper__sub-header--img img{
+      margin-left: 530%;
+  }
 
-    .wrapper__sub-header--username{
-        margin-left: 235px;
-    }
+  .wrapper__sub-header--username{
+      margin-left: 235px;
+  }
 
-    .wrapper__sub-header--username p{
-        margin-top: 20px;
-    }
-    .container_main{
-    width: 100%;
-    height: 100%;
-    border-radius: 0%;
+  .wrapper__sub-header--username p{
+      margin-top: 20px;
+  }
+  .container_main{
+  width: 100%;
+  height: 100%;
+  border-radius: 0%;
   }
   .segundo-column_content,
   .segundo_colunm-form{
