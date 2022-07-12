@@ -16,3 +16,16 @@
   align-items: center;
   position: relative;
 }
+
+.segundo_colunm-form {
+  display: flex;
+  height: 100%;
+}
+
+.colunm-form {
+  display: flex;
+}
+
+.div-form {
+  display: flex;
+}
