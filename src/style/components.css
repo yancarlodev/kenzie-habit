@@ -9,7 +9,7 @@
     --grey-4: #E9ECEF;
     --grey-5: #F1F3F5;
     --grey-6: #F8F9FA;
-
+    
     --sucess: #56CF8E;
     --error-1: #E64445;
     --error-2: #F03839;
@@ -77,6 +77,10 @@
     font-weight: 400;
     line-height: 22px;
     color: var(--grey-2);
+}
+
+.text-3--error {
+    color: #D3696A;
 }
 
 .text-3--500 {
@@ -206,6 +210,7 @@
 
 .input:focus {
     outline: 2px solid var(--primary-1);
+    background-color: var(--grey-6);
 }
 
 .input--error {
@@ -216,5 +221,29 @@
     outline: 2px solid #CF5656;
 }
 
+.input--big {
+    width: 100%;
+    padding: 16px 18px;
+    resize: none;
+}
 
+.select {
+    margin-top: 100px;
+    width: 100%;
+    background-color: var(--grey-5);
+    border-radius: 4px;
+    border: 2px solid var(--grey-5);
+    padding: 9px 18px;
+    outline: none;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--grey-2);
+}
 
+.select > option {
+    background-color: white;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 34px;
+    color: var(--grey-1);
+}
