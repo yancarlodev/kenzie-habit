@@ -1,0 +1,33 @@
+.container_modal-criar-habito {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.212);
+  border-radius: 7px;
+  margin: 5px;
+  width: 502px;
+  padding: 32px;
+}
+.modal-crair-habito-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 3px;
+}
+.criar-habito_title-primary {
+  margin-bottom: 20px;
+}
+
+#habit_title {
+  margin: 0px 0px 15px;
+}
+#habit_description {
+  margin: 0px 0px 15px;
+  resize: none;
+}
+#habit_category {
+  margin: 0px 0px 15px;
+  padding: 5px;
+}
+
+.hidden{
+    display: none;
+}

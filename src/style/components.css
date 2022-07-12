@@ -1,220 +1,271 @@
 :root {
-    --primary-1: #415AF3;
-    --primary-2: #4150D2;
-    --primary-3: #D7E4FB;
+  --primary-1: #415af3;
+  --primary-2: #4150d2;
+  --primary-3: #d7e4fb;
 
-    --grey-1: #212529;
-    --grey-2: #343A40;
-    --grey-3: #ADB5BD;
-    --grey-4: #E9ECEF;
-    --grey-5: #F1F3F5;
-    --grey-6: #F8F9FA;
+  --grey-1: #212529;
+  --grey-2: #343A40;
+  --grey-3: #ADB5BD;
+  --grey-4: #E9ECEF;
+  --grey-5: #F1F3F5;
+  --grey-6: #F8F9FA;
 
-    --sucess: #56CF8E;
-    --error-1: #E64445;
-    --error-2: #F03839;
+  --sucess: #56CF8E;
+  --error-1: #E64445;
+  --error-2: #F03839;
 }
 
 .title-1 {
-    font-size: 40px;
-    font-weight: 600;
-    line-height: 48px;
-    color: var(--grey-1);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 48px;
+  color: var(--grey-1);
 }
 
 .title-2 {
-    font-size: 28px;
-    font-weight: 600; 
-    line-height: 34px;
-    color: var(--grey-1);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 34px;
+  color: var(--grey-1);
 }
 
 .title-3 {
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 32px;
-    color: var(--grey-1);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  color: var(--grey-1);
 }
 
 .title-4 {
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 24px;
-    color: var(--grey-1);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  color: var(--grey-1);
 }
 
 .title-5 {
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 26px;
-    color: var(--grey-1);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 26px;
+  color: var(--grey-1);
 }
 
 .text-1 {
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 36px;
-    color: var(--grey-2);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 36px;
+  color: var(--grey-2);
 }
 
 .text-1--500 {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .text-2 {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 32px;
-    color: var(--grey-2);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  color: var(--grey-2);
 }
 
 .text-2--500 {
     font-weight: 500;
+    color: var(--grey-2);
 }
 
 .text-3 {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 22px;
-    color: var(--grey-2);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--grey-2);
+}
+
+.text-3--error {
+    color: #D3696A;
 }
 
 .text-3--500 {
-    font-weight: 500;
+  font-weight: 500;
+}
+
+.text-4 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.94px;
+  color: var(--grey-2);
 }
 
 .button {
-    background-color: var(--primary-1);
-    color: white;
-    padding: 7.5px 28px;
-    border: none;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 17px;
-    cursor: pointer;
+  background-color: var(--primary-1);
+  color: white;
+  padding: 7.5px 28px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17px;
+  cursor: pointer;
 }
 
-.button:hover, .button--big:hover {
-    background-color: var(--primary-2);
+.button:hover,
+.button--big:hover {
+  background-color: var(--primary-2);
 }
 
 .button--big {
-    padding: 10.5px 50px;
-    font-size: 16px;
-    line-height: 19px;
+  padding: 10.5px 50px;
+  font-size: 16px;
+  line-height: 19px;
 }
 
 .button--big-disable {
-    background-color: #A0ADF9;
-    cursor: default;
+  background-color: #a0adf9;
+  cursor: default;
 }
 
 .button--big-disable:hover {
-    background-color: #A0ADF9;
+  background-color: #a0adf9;
 }
 
 .button--big-grey {
-    background-color: var(--grey-5);
-    color: var(--grey-2);
+  background-color: var(--grey-5);
+  color: var(--grey-2);
 }
 
 .button--big-grey:hover {
-    background-color: var(--grey-4);
+  background-color: var(--grey-4);
 }
 
 .button--big-red {
-    background-color: var(--error-1);
+  background-color: var(--error-1);
 }
 
 .button--big-red:hover {
-    background-color: var(--error-2);
+  background-color: var(--error-2);
 }
 
 .pop-up__button {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-    width: 100%;
-    background-color: white;
-    color: var(--grey-2);
-    padding: 6px 16px;
-    border: none;
-    border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  width: 100%;
+  background-color: white;
+  color: var(--grey-2);
+  padding: 6px 16px;
+  border: none;
+  border-radius: 4px;
 }
 
-.fa-user, .fa-arrow-left {
-    color: var(--primary-1);
+.fa-user,
+.fa-arrow-left {
+  color: var(--primary-1);
 }
 
 .pop-up__button:hover {
-    background-color: var(--grey-5);
+  background-color: var(--grey-5);
 }
 
 .pop-up__button:hover > .fa-user {
-    color: var(--primary-2);
+  color: var(--primary-2);
 }
 
 .pop-up__button:hover > .fa-arrow-left {
-    color: var(--primary-2);
+  color: var(--primary-2);
 }
 
 .checkbox {
-    display: grid;
-    place-content: center;
-    appearance: none;
-    width: 17px;
-    height: 15px;
-    border: 1.4px solid var(--grey-3);
-    border-radius: 2px;
+  display: grid;
+  place-content: center;
+  appearance: none;
+  width: 17px;
+  height: 15px;
+  border: 1.4px solid var(--grey-3);
+  border-radius: 2px;
 }
 
 .checkbox:hover {
-    background-color: var(--grey-4);
+  background-color: var(--grey-4);
 }
 
 .checkbox:checked {
-    background-color: var(--sucess);
-    border: 1.4px solid var(--sucess);
+  background-color: var(--sucess);
+  border: 1.4px solid var(--sucess);
 }
 
 .checkbox:checked:hover {
-    background-color: var(--sucess);
+  background-color: var(--sucess);
 }
 
 .checkbox:checked::before {
-    content: "";
-    background-color: white;
-    width: 10px;
-    height: 7.45px;
-    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  content: "";
+  background-color: white;
+  width: 10px;
+  height: 7.45px;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
 }
 
 .input {
-    background-color: var(--grey-5);
-    padding: 10.5px 18px;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 19px;
+  background-color: var(--grey-5);
+  padding: 10.5px 18px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
 }
 
 .input::placeholder {
-    color: var(--grey-1);
+  color: var(--grey-1);
 }
 
 .input:focus {
-    outline: 2px solid var(--primary-1);
+  outline: 2px solid var(--primary-1);
+  background-color: var(--grey-6);
 }
 
 .input--error {
-    outline: 2px solid #CF5656;
+  outline: 2px solid #cf5656;
 }
 
 .input--error:focus {
-    outline: 2px solid #CF5656;
+  outline: 2px solid #cf5656;
 }
 
+.input--big {
+  width: 100%;
+  padding: 16px 18px;
+  resize: none;
+}
 
+.select {
+  margin-top: 100px;
+  width: 100%;
+  background-color: var(--grey-5);
+  border-radius: 4px;
+  border: 2px solid var(--grey-5);
+  padding: 9px 18px;
+  outline: none;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--grey-2);
+}
+
+.select > option {
+  background-color: white;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 34px;
+  color: var(--grey-1);
+}
+
+.blocker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #00000080;
+    position: fixed;
+    top: 0;
+}
 
