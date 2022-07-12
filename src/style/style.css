@@ -1,3 +1,18 @@
 * {
-    font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
+}
+.container_main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container_login {
+  border: 1px solid var(--grey-1);
+  border-radius: 15px;
+  width: 960px;
+  height: 80%;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 }
