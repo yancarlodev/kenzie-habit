@@ -45,26 +45,28 @@
                 </div>
             </div>
         </header>
-        <section class="container_modal-criar-habito hidden" >
-            <div class="container_crair-habito-form">
-              <form class="modal-crair-habito-form" action="" type="submit">
-                <h2 class="title-4 criar-habito_title-primary" >Criar hábito</h2>
-      
-                <label class="second_habit_title" for="">Titulo</label>
-                <input class="input" type="text" name="habit_title" id="habit_title" placeholder="Digitar título"/>
-      
-                <label class="third_habit_title" for="">Descrição</label>
-                <textarea class="input" name="habit_description" id="habit_description" cols="30" rows="3" placeholder="Digitar descrição"></textarea>
-      
-                <label class="fouth_habit_title" for="">Categoria</label>
-                <select class="input" name="habit_category" id="habit_category">
-                    <option value="Saúde">Saúde</option>
-                    <option value="trabalho">Trabalho</option>
-                    <option value="lazer">Lazer</option>
-                </select>
-      
-                <button class="button" type="submit">Inserir</button>
-              </form>
+        <section class="blocker hidden">
+            <div class="container_modal-criar-habito">
+                <div class="container_crair-habito-form">
+                <form class="modal-crair-habito-form" action="" type="submit">
+                    <h2 class="title-4 criar-habito_title-primary">Criar hábito</h2>
+        
+                    <label class="text-3" for="habit_title">Titulo</label>
+                    <input class="input" type="text" name="habit_title" id="habit_title" placeholder="Digitar título"/>
+        
+                    <label class="text-3" for="habit_description">Descrição</label>
+                    <textarea class="input" name="habit_description" id="habit_description" rows="3" placeholder="Digitar descrição"></textarea>
+        
+                    <label class="text-3" for="habit_category">Categoria</label>
+                    <select class="input" name="habit_category" id="habit_category">
+                        <option value="Saúde">Saúde</option>
+                        <option value="trabalho">Trabalho</option>
+                        <option value="lazer">Lazer</option>
+                    </select>
+        
+                    <button class="button button--big" type="submit">Inserir</button>
+                </form>
+                </div>
             </div>
           </section>
     </body>

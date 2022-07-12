@@ -1,8 +1,10 @@
 .container_modal-criar-habito {
+  background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.212);
   border-radius: 7px;
   margin: 5px;
-  max-width: 502px;
+  width: 502px;
+  padding: 32px;
 }
 .modal-crair-habito-form {
   display: flex;
@@ -12,11 +14,8 @@
 }
 .criar-habito_title-primary {
   margin-bottom: 20px;
-  font-family: "Inter";
 }
-.container_crair-habito-form {
-  padding: 15px;
-}
+
 #habit_title {
   margin: 0px 0px 15px;
 }
@@ -28,15 +27,7 @@
   margin: 0px 0px 15px;
   padding: 5px;
 }
-.second_habit_title {
-  font-family: "Inter";
-}
-.third_habit_title{
-    font-family: "Inter";
-}
-.fouth_habit_title{
-    font-family: "Inter";
-}
+
 .hidden{
     display: none;
 }
