@@ -13,11 +13,11 @@ export default class LoginController {
           dados[input.name] = input.value;
         }
       });
-     const request = await Api.loginUser(dados)
-     if(request.token !== undefined){
-        location.href = "./src/pages/homepage.html"
-     }else{
-        alert(request.message)
+      const request = await LoginRequest.loginUser(dados);
+      if (request.token !== undefined) {
+        location.href = "../../pages/homepage.html";
+      } else {
+        alert(request.message);
       }
     });
   }
