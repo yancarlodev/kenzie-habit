@@ -56,14 +56,12 @@
   width: 100%;
   gap: 3px;
 }
-.criar-profile_title-primary {
-}
 
 .button--edit {
   margin-top: 24px;
 }
 
-#habit_title {
+#profile_title {
   margin: 0px 0px 15px;
 }
 #habit_description {

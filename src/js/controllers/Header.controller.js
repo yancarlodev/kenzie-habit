@@ -1,3 +1,4 @@
+import Api from "../models/Api.model.js";
 export default class Header {
   static buttonCard() {
     const button = document.getElementById("header--button");
@@ -33,15 +34,20 @@ export default class Header {
   }
 
   static profileHeader(userName, userImg, userDscr) {
-    const wrapperHeader = document.querySelector(".header--img");
+    const wrapperHeader = document.querySelector(".wrapper__header--img");
     const wrapperImg = document.querySelector(".wrapper__sub-header--img");
     const wrapperName = document.querySelector(
       ".wrapper__sub-header--username"
     );
 
+    wrapperHeader.innerHTML = "";
+    wrapperImg.innerHTML = "";
+    wrapperName.innerHTML = "";
     const imgProfile = document.createElement("img");
+    imgProfile.classList.add("");
     imgProfile.src = userImg;
     imgProfile.alt = "user-img";
+    imgProfile.id = "header--button";
 
     const img = document.createElement("img");
     img.src = userImg;
@@ -50,23 +56,34 @@ export default class Header {
     const name = document.createElement("p");
     const dscrp = document.createElement("p");
 
+    console.log(userName);
     name.innerText = userName;
-    name.classList.add("user-name");
+    name.classList.add("title-4");
 
-    dscrp.innerText = userDscr;
+    /* dscrp.innerText = userDscr */
     dscrp.classList.add("user-description");
 
     wrapperHeader.appendChild(imgProfile);
     wrapperImg.appendChild(img);
-    wrapperName.append(name, dscrp);
+    wrapperName.appendChild(name);
   }
 
-  static closeBtnEditProfile() {
-    let container = document.querySelector("#containerProfileModal");
-    let btnClose = document.querySelector("#closeButtonEditProfile");
+  static getInputsEditProfile() {
+    const form = document.querySelector(".modal-crair-profile-form");
+    const section = document.querySelector("#containerProfileModal");
+    const arrayForm = Array.from(form.elements);
 
-    btnClose.addEventListener("click", (event) => {
-      container.classList.add("hidden");
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      let obj = {
+        usr_name: arrayForm[0].value,
+        usr_image: arrayForm[1].value,
+      };
+      this.profileHeader(obj.usr_name, obj.usr_image);
+
+      let api = await Api.editProfile(obj);
+
+      section.classList.add("hidden");
     });
   }
 }

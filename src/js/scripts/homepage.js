@@ -5,6 +5,7 @@ import createHabit from "../controllers/createHabit.controller.js";
 
 // Header.buttonCard()
 // Header.buttonOptions()
-Header.closeBtnEditProfile();
+
 Main.clickButttonCreate();
 createHabit.controllerHabit();
+Header.getInputsEditProfile();
