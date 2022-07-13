@@ -2,6 +2,7 @@ export default class Api {
   static url = "https://habits-kenzie.herokuapp.com/api/userLogin";
   static url_edit = "https://habits-kenzie.herokuapp.com/api/habits/";
   static token = JSON.parse(localStorage.getItem("@kenzie-habit:token"));
+  static user = JSON.parse(localStorage.getItem("@kenzie-habit:user"));
   static headers = {
     "Content-Type": "application/json",
     Authorization: `Bearer ${this.token}`,
@@ -76,3 +77,5 @@ export default class Api {
       });
   }
 }
+
+console.log(Api.user)
