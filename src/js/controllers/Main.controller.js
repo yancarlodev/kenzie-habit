@@ -47,13 +47,13 @@ export default class Main {
 
         tableBody.addEventListener('click', event => {
             if (event.target.type === 'checkbox') {
-                const statusObject = {
-                    habit_status: event.target.checked
-                }
+                // const statusObject = {
+                //     habit_status: event.target.checked
+                // }
 
                 const buttonId = event.composedPath()[3].childNodes[4].childNodes[0].id
 
-                Api.updateHabitStatus(117, statusObject)
+                Api.habitComplete(buttonId)
 
                 MainView.checkIfItsComplete()
             }

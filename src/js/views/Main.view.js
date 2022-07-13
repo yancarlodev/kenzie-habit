@@ -1,9 +1,10 @@
 export default class MainView {
-    static renderAllHabits(habitsList) {
+    static async renderAllHabits(habitsList) {
         const tableBody = document.querySelector('.habits__table-body')
+        const habitListAwaited = await habitsList
         tableBody.innerHTML = ''
 
-        habitsList.forEach(({ habit_id, habit_title, habit_description, habit_category, habit_status }) => {
+        habitListAwaited.forEach(({ habit_id, habit_title, habit_description, habit_category, habit_status }) => {
             const tableRow = document.createElement('tr')
             tableRow.classList.add('data-row')
 
@@ -64,6 +65,8 @@ export default class MainView {
             tableRow.append(firstCell, secondCell, thirdCell, forthCell, fifthCell)
             tableBody.append(tableRow)
         })
+
+        this.checkIfItsComplete()
     }
     static checkIfItsComplete() {
         const allCheckbox = document.querySelectorAll('.checkbox-pointer')

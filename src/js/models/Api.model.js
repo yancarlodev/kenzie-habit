@@ -47,7 +47,7 @@ export default class Api {
       });
   }
   static async habitComplete(habit_id) {
-    return await fetch(`${this.url_edit}complete/:${habit_id}`, {
+    return await fetch(`${this.url_edit}complete/${habit_id}`, {
       method: "PATCH",
       headers: this.headers,
     })
@@ -92,10 +92,7 @@ export default class Api {
 
     const options = {
       method: 'GET',
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${JSON.parse(localStorage.getItem('@kenzie-habit:token'))}`,
-      }
+      headers: this.headers
     }
 
     const apiResponse = fetch(apiURL, options).then(response => response.json()).catch(error => error)
@@ -108,10 +105,7 @@ export default class Api {
 
     const options = {
       method: 'PATCH',
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${JSON.parse(localStorage.getItem('@kenzie-habit:token'))}`,
-      },
+      headers: this.headers,
       body: JSON.stringify(status)
     }
 
