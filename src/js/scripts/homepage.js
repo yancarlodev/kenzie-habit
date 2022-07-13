@@ -8,7 +8,7 @@ import MainView from "../views/Main.view.js"
 Header.buttonCard()
 Header.editProfile()
 Header.logout()
-Header.saveAlterationModal()
+// Header.saveAlterationModal()
 
 Main.clickButttonCreate()
 createHabit.controllerHabit()
