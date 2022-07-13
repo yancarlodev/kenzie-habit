@@ -160,13 +160,14 @@
       </div>
     </section>
     
-    <section class="blocker hiddenn">
+    <section class="blocker" id ="containerProfileModal">
       <div class="container__modal-profile">
           <div class="container__createProfile-form">
           <form class="modal-crair-habito-form"  type="submit">
-              <h2 class="title-4 criar-profile_title-primary">Editar perfil<span><i class="fa-solid fa-x"></i></span></h2>
+            <span class=" title__edit-profile"><h2 class="title-4 criar-profile_title-primary">Editar perfil</h2>
+              <i class="fa-solid fa-x" id="closeButtonEditProfile" ></i></span>
               <label class="text-3">Nome</label>
-              <input class="input" type="text"  id="habit_title" placeholder="Digite o nome"/>
+              <input class="input" type="text" name="usr_name" id="habit_title" placeholder="Digite o nome"/>
               <label class="text-3" >URL da imagem do perfil</label>
               <input class="input" name ="usr_image"  placeholder="https://imagem.com.br"></input>
              
