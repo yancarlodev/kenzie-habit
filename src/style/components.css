@@ -271,13 +271,13 @@
 }
 
 .pop-up {
-  width: 453px;
+  width: 400px;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
   background-color: #E6F8EE;
   border: 2px solid #56CF8E;
-  padding: 26px 20px;
+  padding: 10px 5px;
   border-radius: 8px;
 }
 

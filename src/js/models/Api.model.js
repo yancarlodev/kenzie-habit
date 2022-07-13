@@ -1,11 +1,12 @@
 export default class Api {
   static url = "https://habits-kenzie.herokuapp.com/api/userLogin";
-  static token = JSON.parse(localStorage.getItem("@kenzie-blog:token"));
+  static url_edit = "https://habits-kenzie.herokuapp.com/api/habits/";
+  static token = JSON.parse(localStorage.getItem("@kenzie-habit:token"));
+  static user = JSON.parse(localStorage.getItem("@kenzie-habit:user"));
   static headers = {
     "Content-Type": "application/json",
     Authorization: `Bearer ${this.token}`,
   };
-
   static async loginUser(loginData) {
     return await fetch(this.url, {
       method: "POST",
@@ -32,9 +33,50 @@ export default class Api {
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
-      .catch(err => console.log(err))
+      .catch((err) => console.log(err));
   }
-
+  static async habitEdit(data, habit_Id) {
+    return await fetch(`${this.url_edit}${habit_Id}`, {
+      method: "PATCH",
+      headers: this.headers,
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+  static async habitComplete(habit_id) {
+    return await fetch(`${this.url_edit}complete/:${habit_id}`, {
+      method: "PATCH",
+      headers: this.headers,
+    })
+      .then((res) => res.json())
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+  static async habitDelete(habit_id) {
+    return await fetch(`${this.url_edit}${habit_id}`, {
+      method: "DELETE",
+      headers: this.headers,
+    })
+      .then((res) => res.json())
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+  static async habitReadAll() {
+    return await fetch(`${this.url_edit}`, {
+      method: "GET",
+      headers: this.headers,
+    })
+      .then((res) => res.json())
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+  
   static getHabitById(id) {
     const apiURL = `https://habits-kenzie.herokuapp.com/api/habits/${id}`
 
@@ -51,7 +93,7 @@ export default class Api {
     return apiResponse
   }
 
-  static async updateHabitStatus(id, status) {
+  static updateHabitStatus(id, status) {
     const apiURL = `https://habits-kenzie.herokuapp.com/api/habits/${id}`
 
     const options = {
@@ -63,8 +105,8 @@ export default class Api {
       body: JSON.stringify(status)
     }
 
-    const apiResponse = await fetch(apiURL, options).then(res => res.json()).catch(error => error)
-    console.log(apiResponse)
+    const apiResponse = fetch(apiURL, options).then(res => res.json()).catch(error => error)
+    
     return apiResponse
   }
 }

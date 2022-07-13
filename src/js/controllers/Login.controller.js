@@ -1,5 +1,6 @@
 import Api from "../models/Api.model.js"
 
+
 export default class LoginController {
   static controllerLogin() {
     const buttonLogin = document.querySelector(".button-login");
@@ -13,13 +14,12 @@ export default class LoginController {
           dados[input.name] = input.value;
         }
       });
-      const request = await LoginRequest.loginUser(dados);
+      const request = await Api.loginUser(dados);
       if (request.token !== undefined) {
-        location.href = "../../pages/homepage.html";
+        location.href = "./src/pages/homepage.html";
       } else {
         alert(request.message);
       }
     });
   }
 }
-
