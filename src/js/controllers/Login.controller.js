@@ -1,6 +1,6 @@
-import LoginRequest from "../models/Login.requestl.js";
+import Api from "../models/Api.model.js"
 
-class LoginController {
+export default class LoginController {
   static controllerLogin() {
     const buttonLogin = document.querySelector(".button-login");
 
@@ -13,13 +13,13 @@ class LoginController {
           dados[input.name] = input.value;
         }
       });
-     const request = await LoginRequest.loginUser(dados)
-     if(request.token !== undefined){
-        location.href = "../../pages/homepage.html"
-     }else{
-        alert(request.message)
+      const request = await LoginRequest.loginUser(dados);
+      if (request.token !== undefined) {
+        location.href = "../../pages/homepage.html";
+      } else {
+        alert(request.message);
       }
     });
   }
 }
-LoginController.controllerLogin();
+

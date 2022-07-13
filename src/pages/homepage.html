@@ -119,6 +119,7 @@
         </div>
       </div>
     </section>
+    
     <section class="blocker container_edit-habit hidden">
       <div class="container_modal-edit-habito">
         <div class="container_edit-habito-form">
@@ -127,7 +128,6 @@
                 <h2 class="title-4 edit-habito_title-primary">
                   Editar hábito
                 </h2>
-                
                 <img class="fa-solid fa-x" src="" alt="">
             </div>
 
@@ -164,10 +164,64 @@
                 Excluir
               </button>
               <button class="button button-change" type="submit">Salvar Alterações</button>
-            </div>
-          </form>
+            </form>
         </div>
       </div>
+                <div class="wrapper__sub-header">
+                    <div class="container__sub-header">
+                    <div class="wrapper__sub-header--img">
+                        <figure>
+                            <img  src="../assets/img/Ellipse 3.png" alt="profile-img">
+                        </figure>
+                    </div>
+                    <div class="wrapper__sub-header--username">
+                        <p class="title-4 title-4--white">Júlia Silva Camargo</p>
+                        <p class="text-2 text-2--white">Estudante de programação</p>
+                    </div>
+                </div>
+                </div>
+            </div>  
+        </header>
+          
+        <main class="main__container">
+            <section class="section__container">
+                <div class="section__filter--infos">
+                    <div class="section__filter-title title-4">
+                        <span>Tarefas</span>
+                    </div>
+        
+                    <ul class="section__filter--options">
+                        <li class="text-2--500">Todos</li>
+                        <li class="text-2--500">Concluídos</li>
+                        <li><button class="section__filter--button">Criar</button></li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+        
+        <section class="blocker hidden">
+            <div class="container_modal-criar-habito">
+                <div class="container_crair-habito-form">
+                <form class="modal-crair-habito-form" action="" type="submit">
+                    <h2 class="title-4 criar-habito_title-primary">Criar hábito<span><i class="fa-solid fa-x"></i></span></h2>
+        
+                    <label class="text-3" for="habit_title">Titulo</label>
+                    <input class="input" type="text" name="habit_title" id="habit_title" placeholder="Digitar título"/>
+        
+                    <label class="text-3" for="habit_description">Descrição</label>
+                    <textarea class="input" name="habit_description" id="habit_description" rows="3" placeholder="Digitar descrição"></textarea>
+        
+                    <label class="text-3" for="habit_category">Categoria</label>
+                    <select class="input" name="habit_category" id="habit_category">
+                        <option value="Saúde">Saúde</option>
+                        <option value="trabalho">Trabalho</option>
+                        <option value="lazer">Lazer</option>
+                    </select>
+        
+                    <button class="button button--big button-inserir" type="submit">Inserir</button>
+                </form>
+                </div>
+            </div>
     </section>
   </body>
 </html>
