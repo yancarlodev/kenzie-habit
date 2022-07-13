@@ -47,7 +47,7 @@ export default class Header {
     const buttonLogout = document.getElementById("logout")
 
     buttonLogout.addEventListener("click", () => {
-      location.href = "../src/pages/index.html"
+      location.href = "../../index.html"
       localStorage.removeItem("@kenzie-habit:user")
       localStorage.removeItem("@kenzie-habit:token")
     })
