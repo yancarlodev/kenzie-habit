@@ -15,11 +15,11 @@ export default class createHabit {
         }
       });
       const request = await Api.createHabit(dados);
-      /* console.log(request);
+      console.log(request);
       if (request.habit_id !== undefined) {
         modal.style.display = "none";
         pop_up.style.display = "flex";
-      } */
+      }
     });
   }
 }
