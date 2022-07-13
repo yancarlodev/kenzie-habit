@@ -1,6 +1,11 @@
+import Api from "../models/Api.model.js";
+
 export default class createHabit {
   static controllerHabit() {
-    const buttonInserir = document.querySelector(".button-inserir")
+    const modal = document.querySelector("#modal-criar");
+    const pop_up = document.querySelector(".container_pop-up_create-habit");
+    const buttonInserir = document.querySelector(".button-inserir");
+
     buttonInserir.addEventListener("click", async (e) => {
       e.preventDefault();
       const dados = {};
@@ -10,8 +15,13 @@ export default class createHabit {
           dados[input.name] = input.value;
         }
       });
-      console.log(dados)
-    })
 
+      const request = await Api.createHabit(dados);
+      console.log(request);
+      if (request.habit_id !== undefined) {
+        modal.style.display = "none";
+        pop_up.style.display = "flex";
+      }
+    });
   }
 }
