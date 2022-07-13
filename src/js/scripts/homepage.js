@@ -1,5 +1,5 @@
 import Header from "../controllers/Header.controller.js"
 
 Header.buttonCard()
-Header.buttonOptions()
+Header.editProfile()
 Header.logout()

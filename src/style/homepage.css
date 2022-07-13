@@ -20,9 +20,24 @@
     font-weight: 700;
 }
 
-figure {
-    margin: 0;
-    
+.wrapper__edit:hover{
+    background-color: #F1F3F5;
+}
+
+.wrapper__logout:hover{
+    background-color: #F1F3F5;
+}
+
+#logout:hover{
+    background-color: #F1F3F5;
+}
+
+#edit-perfil:hover {
+    background-color: #F1F3F5;
+}
+
+.wrapper__logout button:hover{
+    background-color: #F1F3F5;
 }
 
 .wrapper__header--img {
@@ -228,6 +243,32 @@ figure {
     .container__sub-header {
         width: 80%;
         max-width: 988px;
+    }
+
+    #wrapper__header--pop-up{
+        margin: 0;
+        width: 140px;
+        height: 78px;
+    }
+    
+    #wrapper__header--pop-up .wrapper__edit{
+        margin: 0;
+        height: 30px;
+        margin-bottom: 5px;
+    }
+    
+    #wrapper__header--pop-up .wrapper__logout{
+        margin: 0;
+        height: 30px;
+     }
+    
+    .fa-arrow-left, .fa-user {
+        font-size: 13px;
+    }
+    
+    #wrapper__header--pop-up p {
+        display: inline-block;
+        margin-left: 8px;
     }
 
 
