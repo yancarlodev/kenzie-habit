@@ -2,6 +2,7 @@ export default class Api {
   static url = "https://habits-kenzie.herokuapp.com/api/userLogin";
   static url_edit = "https://habits-kenzie.herokuapp.com/api/habits/";
   static token = JSON.parse(localStorage.getItem("@kenzie-habit:token"));
+  static user = JSON.parse(localStorage.getItem("@kenzie-habit:user"));
   static headers = {
     "Content-Type": "application/json",
     Authorization: `Bearer ${this.token}`,
@@ -86,3 +87,38 @@ export default class Api {
       .catch((error) => console.log(error));
   }
 }
+
+  static getHabitById(id) {
+    const apiURL = `https://habits-kenzie.herokuapp.com/api/habits/${id}`
+
+    const options = {
+      method: 'GET',
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem('@kenzie-habit:token'))}`,
+      }
+    }
+
+    const apiResponse = fetch(apiURL, options).then(response => response.json()).catch(error => error)
+
+    return apiResponse
+  }
+
+  static updateHabitStatus(id, status) {
+    const apiURL = `https://habits-kenzie.herokuapp.com/api/habits/${id}`
+
+    const options = {
+      method: 'PATCH',
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem('@kenzie-habit:token'))}`,
+      },
+      body: JSON.stringify(status)
+    }
+
+    const apiResponse = fetch(apiURL, options).then(res => res.json()).catch(error => error)
+    
+    return apiResponse
+  }
+}
+
