@@ -181,6 +181,7 @@
   height: 15px;
   border: 1.4px solid var(--grey-3);
   border-radius: 2px;
+  pointer-events: all;
 }
 
 .checkbox:hover {
@@ -269,3 +270,41 @@
     top: 0;
 }
 
+.pop-up {
+  width: 400px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #E6F8EE;
+  border: 2px solid #56CF8E;
+  padding: 10px 5px;
+  border-radius: 8px;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: #56CF8E;
+  border-radius: 50%;
+}
+
+.fa-check {
+  font-size: 32px;
+  color: white;
+}
+
+.pop-up__info {
+  gap: 6px;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 8px;
+  width: 50%;
+  max-width: 502px;
+  min-width: 305px;
+  padding: 32px;
+}

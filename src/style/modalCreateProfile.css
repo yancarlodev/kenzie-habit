@@ -1,4 +1,4 @@
-.container_modal-criar-habito {
+.container__modal-profile {
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.212);
   border-radius: 7px;
@@ -6,17 +6,18 @@
   width: 502px;
   padding: 32px;
 }
-.modal-crair-habito-form {
+.container__createProfile-form {
   display: flex;
   flex-direction: column;
   width: 100%;
   gap: 3px;
 }
-.criar-habito_title-primary {
-  margin-bottom: 20px;
+
+.button--edit {
+  margin-top: 24px;
 }
 
-#habit_title {
+#profile_title {
   margin: 0px 0px 15px;
 }
 #habit_description {
@@ -28,6 +29,19 @@
   padding: 5px;
 }
 
-.hidden{
-    display: none;
+.hidden {
+  display: none;
+}
+
+.title__edit-profile {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.img_pop-up{
+  width: 100px;
+}
+.pop-up_title{
+  margin-bottom: 10px;
 }
