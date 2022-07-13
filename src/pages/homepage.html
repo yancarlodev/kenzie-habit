@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -14,6 +11,7 @@
     <link rel="stylesheet" href="../style/homepage.css" />
     <link rel="icon" href="../assets/icon/favicon.svg" />
     <link rel="stylesheet" href="../style/modals.css" />
+    <link rel="stylesheet" href="../style/modalCreateProfile.css"/>
     <script src="https://kit.fontawesome.com/6250bf60ea.js" crossorigin="anonymous"></script>
     <script defer type="module" src="../js/scripts/homepage.js"></script>
     <title>Kenzie Habit</title>
@@ -161,6 +159,19 @@
         </div>
       </div>
     </section>
-
+    
+    <section class="blocker hiddenn">
+      <div class="container__modal-profile">
+          <div class="container__createProfile-form">
+          <form class="modal-crair-habito-form"  type="submit">
+              <h2 class="title-4 criar-profile_title-primary">Editar perfil<span><i class="fa-solid fa-x"></i></span></h2>
+              <label class="text-3">Nome</label>
+              <input class="input" type="text"  id="habit_title" placeholder="Digite o nome"/>
+              <label class="text-3" >URL da imagem do perfil</label>
+              <input class="input" name ="usr_image"  placeholder="https://imagem.com.br"></input>
+             
+              <button class="button button--big button--edit" type="submit">Salvar alterações</button>
+         </form>
+         </div>
   </body>
 </html>

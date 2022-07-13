@@ -1,0 +1,81 @@
+/* .modal-container-edit-profile {
+  background-color: white;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+
+         margin: 350px; 
+  width: 502px;
+  height: 349px;
+  padding: 38px32px;
+}
+
+.edit-profile-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 3px;
+}
+
+.modal-edit-profile {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit_profile-title {
+  margin-top: 6px;
+}
+
+.edit_profile_title-primary {
+  margin-bottom: 20px;
+}
+
+      .text_edit_profile-url {
+} 
+
+.fa-x {
+  margin-left: 300px;
+  color: rgb(214, 0, 0);
+  size: 20px;
+  cursor: pointer;
+}
+ */
+
+.container__modal-profile {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.212);
+  border-radius: 7px;
+  margin: 5px;
+  width: 502px;
+  padding: 32px;
+}
+.container__createProfile-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 3px;
+}
+.criar-profile_title-primary {
+  margin-bottom: 20px;
+}
+
+.button--edit {
+  margin-top: 24px;
+}
+
+#habit_title {
+  margin: 0px 0px 15px;
+}
+#habit_description {
+  margin: 0px 0px 15px;
+  resize: none;
+}
+#habit_category {
+  margin: 0px 0px 15px;
+  padding: 5px;
+}
+
+.hidden {
+  display: none;
+}
