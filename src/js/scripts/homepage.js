@@ -6,7 +6,7 @@ import createHabit from "../controllers/createHabit.controller.js";
 Header.buttonCard()
 Header.editProfile()
 Header.logout()
-Header.saveAlterationModal()
+// Header.saveAlterationModal()
 
 
 
