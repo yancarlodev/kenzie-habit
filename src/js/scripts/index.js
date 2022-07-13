@@ -1,3 +1,3 @@
-import { LoginController } from "../controllers/Login.controller.js";
+import LoginController from "../controllers/Login.controller.js";
 
-LoginController.getInputsLogin();
+LoginController.controllerLogin()

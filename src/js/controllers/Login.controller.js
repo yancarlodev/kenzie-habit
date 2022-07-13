@@ -1,14 +1,24 @@
-export class LoginController {
-  static getInputsLogin() {
-    const form = document.querySelector("#loginForm");
-    const arrayForm = Array.from(form.elements);
+import Api from "../models/Api.model.js"
 
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-      let obj = {
-        email: arrayForm[0].value,
-        password: arrayForm[1].value,
-      };
+export default class LoginController {
+  static controllerLogin() {
+    const buttonLogin = document.querySelector(".button-login");
+
+    buttonLogin.addEventListener("click", async (e) => {
+      e.preventDefault();
+      const dados = {};
+      const formValue = [...e.target.form];
+      formValue.forEach((input) => {
+        if (input.value !== "") {
+          dados[input.name] = input.value;
+        }
+      });
+      const request = await Api.loginUser(dados);
+      if (request.token !== undefined) {
+        location.href = "./src/pages/homepage.html";
+      } else {
+        alert(request.message);
+      }
     });
   }
 }
