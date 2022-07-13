@@ -2,26 +2,11 @@ export default class Header {
     static buttonCard() {
         const button = document.getElementById("header--button")
         const popUp = document.getElementById("wrapper__header--pop-up")
-        const seta = document.getElementById("seta")
+        const seta = document.querySelector(".container-seta")
 
         button.addEventListener("click", () => {
-
-            if(popUp.style.display === 'none') {
-                popUp.style.display = 'block'
-
-            }else if(popUp.style.display === 'block') {
-                popUp.style.display = 'none'
-
-            }
-            
-            if(seta.style.display === 'none') {
-                seta.style.display = 'block'
-                
-
-            }else if(seta.style.display === 'block') {
-                seta.style.display = 'none'
-
-            }
+            seta.classList.toggle("hidden")
+            popUp.classList.toggle("hidden")
         })
     }
 
@@ -64,6 +49,14 @@ export default class Header {
         wrapperImg.appendChild(img)
         wrapperName.append(name, dscrp)
 
+    }
+
+    static logout() {
+        const buttonLogout = document.getElementById("logout")
+
+        buttonLogout.addEventListener("click", event => {
+            console.log("teste")
+        })
     }
 }
 
