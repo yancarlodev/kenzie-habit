@@ -1,6 +1,6 @@
-import LoginRequest from "../models/Login.requestl.js";
+import Api from "../models/Api.model.js"
 
-class LoginController {
+export default class LoginController {
   static controllerLogin() {
     const buttonLogin = document.querySelector(".button-login");
 
@@ -22,4 +22,4 @@ class LoginController {
     });
   }
 }
-LoginController.controllerLogin();
+
