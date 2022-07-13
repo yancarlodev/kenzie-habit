@@ -7,6 +7,7 @@ import MainView from "../views/Main.view.js"
 Header.buttonCard()
 Header.editProfile()
 Header.logout()
+
 Header.getInputsEditProfile();
 
 Main.clickButttonCreate()

@@ -2,44 +2,18 @@ import Api from "../models/Api.model.js";
 
 export default class Header {
 
-  static async userData() {
-      const response = await fetch("https://habits-kenzie.herokuapp.com/api/habits", {
-          "method": "GET",
-          "headers": {
-              "Content-Type": "application/json",
-              "Authorization": `Bearer ${this.token}`
-          },
-      })
-      .then((res) => res.json())
-      .then((res) => {
-          console.log(res)
-      })
-      .catch((error) => error)
-      return response
-  }
-
   static buttonCard() {
-      const button = document.getElementById("header--button")
-      const popUp = document.getElementById("wrapper__header--pop-up")
-      const seta = document.querySelector(".container-seta")
+    const button = document.getElementById("header--button")
+    const popUp = document.getElementById("wrapper__header--pop-up")
+    const seta = document.querySelector(".container-seta")
 
-      button.addEventListener("click", () => {
-          seta.classList.toggle("hidden")
-          popUp.classList.toggle("hidden")
-      })
-  }
-  
-  static logout() {
-      const buttonLogout = document.getElementById("logout")
+    button.addEventListener("click", () => {
+        seta.classList.toggle("hidden")
+        popUp.classList.toggle("hidden")
+    })
+}
 
-      buttonLogout.addEventListener("click", () => {
-              location.href = "../src/pages/index.html"
-              localStorage.removeItem("@kenzie-habit:user")
-              localStorage.removeItem("@kenzie-habit:token")
-      })
-  }
-
-  static profileHeader(userName, userImg, userDscr) {
+static profileHeader(userName, userImg, userDscr) {
   const wrapperHeader = document.querySelector(".wrapper__header--img");
   const wrapperImg = document.querySelector(".wrapper__sub-header--img");
   const wrapperName = document.querySelector(
@@ -67,6 +41,30 @@ export default class Header {
   wrapperHeader.appendChild(imgProfile);
   wrapperImg.appendChild(img);
   wrapperName.appendChild(name);
+
+static logout() {
+    const buttonLogout = document.getElementById("logout")
+
+    buttonLogout.addEventListener("click", () => {
+            location.href = "../src/pages/index.html"
+            localStorage.removeItem("@kenzie-habit:user")
+            localStorage.removeItem("@kenzie-habit:token")
+    })
+
+  static async userData() {
+    const response = await fetch("https://habits-kenzie.herokuapp.com/api/habits", {
+        "method": "GET",
+        "headers": {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${this.token}`
+        },
+    })
+    .then((res) => res.json())
+    .then((res) => {
+        console.log(res)
+    })
+    .catch((error) => error)
+    return response
 }
 
 static editProfile() {
