@@ -76,15 +76,15 @@
                     </div>
 
                     <label class="text-3" for="habit_title">Titulo</label>
-                    <input class="input" type="text" name="habit_title" id="habit_title" placeholder="Digitar título" />
+                    <input  class="input" type="text" name="habit_title" id="habit_title" placeholder="Digitar título" required />
 
                     <label class="text-3" for="habit_description">Descrição</label>
-                    <textarea class="input" name="habit_description" id="habit_description" rows="3"
+                    <textarea required class="input" name="habit_description" id="habit_description" rows="3"
                         placeholder="Digitar descrição"></textarea>
 
                     <label class="text-3" for="habit_category">Categoria</label>
                     <select class="input" name="habit_category" id="habit_category">
-                        <option value="Saúde">Saúde</option>
+                        <option value="saude">Saúde</option>
                         <option value="trabalho">Trabalho</option>
                         <option value="lazer">Lazer</option>
                         <option value="estudos">Estudos</option>
@@ -109,10 +109,10 @@
                     </div>
 
                     <label class="text-3" for="edit_name">Titulo</label>
-                    <input class="input" type="text" name="habit_title" id="habit_title" placeholder="Digitar título" />
+                    <input required class="input" type="text" name="habit_title" id="habit_title" placeholder="Digitar título" />
 
                     <label class="text-3" for="habit_description">Descrição</label>
-                    <textarea class="input" name="habit_description" id="habit_description" rows="3"
+                    <textarea required class="input" name="habit_description" id="habit_description" rows="3"
                         placeholder="Digitar descrição"></textarea>
 
                     <label class="text-3" for="habit_category">Categoria</label>
@@ -167,9 +167,9 @@
             <span class=" title__edit-profile"><h2 class="title-4 criar-profile_title-primary">Editar perfil</h2>
               <i class="fa-solid fa-x" id="closeButtonEditProfile" ></i></span>
               <label class="text-3">Nome</label>
-              <input class="input" type="text" name="usr_name" id="habit_title" placeholder="Digite o nome"/>
+              <input required class="input" type="text" name="usr_name" id="habit_title" placeholder="Digite o nome"/>
               <label class="text-3" >URL da imagem do perfil</label>
-              <input class="input" name ="usr_image"  placeholder="https://imagem.com.br"></input>
+              <input required class="input" name ="usr_image"  placeholder="https://imagem.com.br"></input>
              
               <button class="button button--big button--edit" type="submit">Salvar alterações</button>
          </form>
