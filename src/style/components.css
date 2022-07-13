@@ -298,3 +298,12 @@
 .pop-up__info {
   gap: 6px;
 }
+
+.modal {
+  background-color: white;
+  border-radius: 8px;
+  width: 50%;
+  max-width: 502px;
+  min-width: 305px;
+  padding: 32px;
+}
