@@ -6,6 +6,7 @@
   width: 502px;
   padding: 32px;
 }
+
 .container__createProfile-form {
   display: flex;
   flex-direction: column;
@@ -20,10 +21,12 @@
 #profile_title {
   margin: 0px 0px 15px;
 }
+
 #habit_description {
   margin: 0px 0px 15px;
   resize: none;
 }
+
 #habit_category {
   margin: 0px 0px 15px;
   padding: 5px;

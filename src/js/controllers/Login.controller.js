@@ -1,6 +1,5 @@
 import Api from "../models/Api.model.js"
 
-
 export default class LoginController {
   static controllerLogin() {
     const buttonLogin = document.querySelector(".button-login");

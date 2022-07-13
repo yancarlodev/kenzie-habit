@@ -1,9 +1,10 @@
 export default class MainView {
-    static renderAllHabits(habitsList) {
+    static async renderAllHabits(habitsList) {
         const tableBody = document.querySelector('.habits__table-body')
+        const habitListAwaited = await habitsList
         tableBody.innerHTML = ''
 
-        habitsList.forEach(({habit_id, habit_title, habit_description, habit_category, habit_status}) => {
+        habitListAwaited.forEach(({ habit_id, habit_title, habit_description, habit_category, habit_status }) => {
             const tableRow = document.createElement('tr')
             tableRow.classList.add('data-row')
 
@@ -29,7 +30,7 @@ export default class MainView {
             title.innerText = habit_title
 
             secondCell.append(title)
-            
+
             const thirdCell = document.createElement('td')
             thirdCell.classList.add('body-data', 'text-2--500')
 
@@ -64,6 +65,8 @@ export default class MainView {
             tableRow.append(firstCell, secondCell, thirdCell, forthCell, fifthCell)
             tableBody.append(tableRow)
         })
+
+        this.checkIfItsComplete()
     }
     static checkIfItsComplete() {
         const allCheckbox = document.querySelectorAll('.checkbox-pointer')
@@ -71,8 +74,8 @@ export default class MainView {
         allCheckbox.forEach(checkbox => {
             const eventTableRow = checkbox.parentElement.parentElement.parentElement
             const habitText = checkbox.parentElement.parentElement.parentElement.childNodes[1]
-            
-            if(checkbox.checked === true) {
+
+            if (checkbox.checked === true) {
                 eventTableRow.classList.add('habit-checked')
                 habitText.classList.add('text-checked')
             } else {

@@ -3,6 +3,7 @@ import Main from "../controllers/Main.controller.js";
 
 import createHabit from "../controllers/createHabit.controller.js"
 import MainView from "../views/Main.view.js"
+import Api from "../models/Api.model.js";
 
 Header.buttonCard()
 Header.editProfile()
@@ -13,7 +14,7 @@ Header.getInputsEditProfile();
 Main.clickButttonCreate()
 createHabit.controllerHabit()
 
-// MainView.renderAllHabits()
+MainView.renderAllHabits(Api.habitReadAll())
 Main.clickCheckbox()
 Main.clickButtonEdit()
 MainView.checkIfItsComplete()

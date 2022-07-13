@@ -5,38 +5,45 @@
   width: 100%;
   gap: 3px;
 }
+
 .row,
 .delete_info-title,
-.delete_info{
+.delete_info {
   margin-bottom: 20px;
 }
+
 #habit_title {
   margin: 0px 0px 15px;
 }
+
 #habit_description {
   margin: 0px 0px 15px;
   resize: none;
 }
+
 #habit_category {
   margin: 0px 0px 15px;
   padding: 5px;
 }
 
-.hidden{
-    display: none;
+.hidden {
+  display: none;
 }
-.row{
+
+.row {
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
+
 .fa-x {
   color: gray;
   size: 20px;
   cursor: pointer;
 }
+
 .status-row,
-.row{
+.row {
   height: 30px;
   display: flex;
   justify-content: space-between;
@@ -60,4 +67,3 @@
     width: 191px;
   }
 }
-

@@ -5,6 +5,7 @@ export default class createHabit {
     const modal = document.querySelector("#modal-criar");
     const pop_up = document.querySelector(".container_pop-up_create-habit");
     const buttonInserir = document.querySelector(".button-inserir");
+
     buttonInserir.addEventListener("click", async (e) => {
       e.preventDefault();
       const dados = {};
@@ -14,6 +15,7 @@ export default class createHabit {
           dados[input.name] = input.value;
         }
       });
+
       const request = await Api.createHabit(dados);
       console.log(request);
       if (request.habit_id !== undefined) {
