@@ -76,7 +76,18 @@ export default class Api {
         console.log(err);
       });
   }
-  
+
+  static async editProfile(data) {
+    return await fetch("https://habits-kenzie.herokuapp.com/api/user/profile", {
+      method: "PATCH",
+      headers: this.headers,
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .catch((error) => console.log(error));
+  }
+}
+
   static getHabitById(id) {
     const apiURL = `https://habits-kenzie.herokuapp.com/api/habits/${id}`
 
@@ -110,3 +121,4 @@ export default class Api {
     return apiResponse
   }
 }
+

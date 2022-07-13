@@ -1,3 +1,4 @@
+import Api from "../models/Api.model.js";
 
 export default class Header {
 
@@ -27,7 +28,7 @@ export default class Header {
           popUp.classList.toggle("hidden")
       })
   }
-
+  
   static logout() {
       const buttonLogout = document.getElementById("logout")
 
@@ -38,22 +39,69 @@ export default class Header {
       })
   }
 
-  static editProfile() {
-    const buttonEdit = document.getElementById("edit-perfil")
-    const modalEdit = document.querySelector("#containerProfileModal")
-    const buttonModalX = document.querySelector("#closeButtonEditProfile")
+  static profileHeader(userName, userImg, userDscr) {
+  const wrapperHeader = document.querySelector(".wrapper__header--img");
+  const wrapperImg = document.querySelector(".wrapper__sub-header--img");
+  const wrapperName = document.querySelector(
+    ".wrapper__sub-header--username"
+  );
 
-    buttonEdit.addEventListener("click", (e) => {
-      e.preventDefault()
-      modalEdit.classList.toggle("hidden")
-    })
+  wrapperHeader.innerHTML = "";
+  wrapperImg.innerHTML = "";
+  wrapperName.innerHTML = "";
+  const imgProfile = document.createElement("img");
+  imgProfile.classList.add("");
+  imgProfile.src = userImg;
+  imgProfile.alt = "user-img";
+  imgProfile.id = "header--button";
 
-    buttonModalX.addEventListener("click", (e) => {
-      e.preventDefault()
-      modalEdit.classList.toggle("hidden")
-    })
+  const img = document.createElement("img");
+  img.src = userImg;
+  img.alt = "user-img";
 
-  }
+  name.innerText = userName;
+  name.classList.add("title-4");
 
+  dscrp.classList.add("user-description");
+
+  wrapperHeader.appendChild(imgProfile);
+  wrapperImg.appendChild(img);
+  wrapperName.appendChild(name);
+}
+
+static editProfile() {
+  const buttonEdit = document.getElementById("edit-perfil")
+  const modalEdit = document.querySelector("#containerProfileModal")
+  const buttonModalX = document.querySelector("#closeButtonEditProfile")
+
+  buttonEdit.addEventListener("click", (e) => {
+    e.preventDefault()
+    modalEdit.classList.toggle("hidden")
+  })
+
+  buttonModalX.addEventListener("click", (e) => {
+    e.preventDefault()
+    modalEdit.classList.toggle("hidden")
+  })
+}
+
+static getInputsEditProfile() {
+  const form = document.querySelector(".modal-crair-profile-form");
+  const section = document.querySelector("#containerProfileModal");
+  const arrayForm = Array.from(form.elements);
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    let obj = {
+      usr_name: arrayForm[0].value,
+      usr_image: arrayForm[1].value,
+    };
+    this.profileHeader(obj.usr_name, obj.usr_image);
+
+    let api = await Api.editProfile(obj);
+
+    section.classList.add("hidden");
+  });
+}
 }
 
