@@ -34,4 +34,37 @@ export default class Api {
       .then((res) => res.json())
       .catch(err => console.log(err))
   }
+
+  static getHabitById(id) {
+    const apiURL = `https://habits-kenzie.herokuapp.com/api/habits/${id}`
+
+    const options = {
+      method: 'GET',
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem('@kenzie-habit:token'))}`,
+      }
+    }
+
+    const apiResponse = fetch(apiURL, options).then(response => response.json()).catch(error => error)
+
+    return apiResponse
+  }
+
+  static async updateHabitStatus(id, status) {
+    const apiURL = `https://habits-kenzie.herokuapp.com/api/habits/${id}`
+
+    const options = {
+      method: 'PATCH',
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem('@kenzie-habit:token'))}`,
+      },
+      body: JSON.stringify(status)
+    }
+
+    const apiResponse = await fetch(apiURL, options).then(res => res.json()).catch(error => error)
+    console.log(apiResponse)
+    return apiResponse
+  }
 }

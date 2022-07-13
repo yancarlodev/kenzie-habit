@@ -64,6 +64,33 @@
                 </ul>
             </div>
         </section>
+
+        <section class="habits-container">
+            <table class="habits__table">
+                <thead class="habits__table-head">
+                    <tr class="data-row">
+                        <th class="text-2--500 head-data">
+                            Status
+                        </th>
+                        <th class="text-2--500 head-data">
+                            Título
+                        </th>
+                        <th class="text-2--500 head-data">
+                            Descrição
+                        </th>
+                        <th class="text-2--500 head-data">
+                            Categoria
+                        </th>
+                        <th class="text-2--500 head-data">
+                            Editar
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody class="habits__table-body">
+                </tbody>
+            </table>
+        </section>
     </main>
 
     <section class="blocker hidden" id="modal-criar">
@@ -91,13 +118,13 @@
                         <option value="lazer">Lazer</option>
                     </select>
 
-                    <button class="button button--big" type="submit">Inserir</button>
+                    <button class="button button--big button-inserir" type="submit">Inserir</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <section class="blocker container_edit-habit hidden">
+    <section class="blocker container_edit-habit hidden" id="edit-modal">
         <div class="modal">
             <div class="container_edit-habito-form">
                 <form class="modal-edit-habito-form" action="" type="submit">
