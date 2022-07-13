@@ -2,7 +2,8 @@ export default class Api {
   static url = "https://habits-kenzie.herokuapp.com/api/userLogin";
   static url_edit = "https://habits-kenzie.herokuapp.com/api/habits/";
   static token = JSON.parse(localStorage.getItem("@kenzie-habit:token"));
-  static user = JSON.parse(localStorage.getItem("@kenzie-habit:user"));
+  static user = JSON.parse(localStorage.getItem("@kenzie-habit:user"))
+
   static headers = {
     "Content-Type": "application/json",
     Authorization: `Bearer ${this.token}`,
@@ -27,7 +28,7 @@ export default class Api {
       .catch((err) => console.log(err));
   }
   static async createHabit(data) {
-    return await fetch(this.url, {
+    return await fetch("https://habits-kenzie.herokuapp.com/api/habits", {
       method: "POST",
       headers: this.headers,
       body: JSON.stringify(data),
