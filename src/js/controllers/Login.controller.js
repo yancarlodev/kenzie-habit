@@ -13,11 +13,11 @@ class LoginController {
           dados[input.name] = input.value;
         }
       });
-     const request = await LoginRequest.loginUser(dados)
-     if(request.token !== undefined){
-        location.href = "../../pages/homepage.html"
-     }else{
-        alert(request.message)
+      const request = await LoginRequest.loginUser(dados);
+      if (request.token !== undefined) {
+        location.href = "../../pages/homepage.html";
+      } else {
+        alert(request.message);
       }
     });
   }
