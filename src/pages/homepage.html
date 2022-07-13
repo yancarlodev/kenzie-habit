@@ -89,6 +89,8 @@
                         <option value="Saúde">Saúde</option>
                         <option value="trabalho">Trabalho</option>
                         <option value="lazer">Lazer</option>
+                        <option value="estudos">Estudos</option>
+                        <option value="casa">Casa</option>
                     </select>
 
                     <button class="button button--big" type="submit">Inserir</button>
@@ -134,5 +136,31 @@
             </div>
         </div>
     </section>
-</body>
+    <section class="blocker container_edit-habit hidden">
+      <div class="container_modal-edit-habito">
+        <div class="container_edit-habito-form">
+          <form class="modal-edit-habito-form" action="" type="submit">
+            <div class="row">
+              <h2 class="title-4 edit-habito_title-primary">Editar hábito</h2>
+
+              <img class="fa-solid fa-x" src="" alt="" />
+            </div>
+              <h4 class="title-4 delete_info-title">Certeza que deseja excluir este hábito?</h4>
+              <p class="text-2--500 delete_info">Após executar essa ação não será possível desfazer</p>
+              <button
+                class="button--big-grey button button-delete"
+                type="submit"
+              >
+                Cancelar
+              </button>
+              <button class="button button--big-red" type="submit">
+                Sim, excluir este hábito
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </body>
 </html>
