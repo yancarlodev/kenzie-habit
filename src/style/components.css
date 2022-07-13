@@ -69,8 +69,8 @@
 }
 
 .text-2--500 {
-    font-weight: 500;
-    color: var(--grey-2);
+  font-weight: 500;
+  color: var(--grey-2);
 }
 
 .text-3 {
@@ -81,7 +81,7 @@
 }
 
 .text-3--error {
-    color: #D3696A;
+  color: #D3696A;
 }
 
 .text-3--500 {
@@ -165,11 +165,11 @@
   background-color: var(--grey-5);
 }
 
-.pop-up__button:hover > .fa-user {
+.pop-up__button:hover>.fa-user {
   color: var(--primary-2);
 }
 
-.pop-up__button:hover > .fa-arrow-left {
+.pop-up__button:hover>.fa-arrow-left {
   color: var(--primary-2);
 }
 
@@ -251,7 +251,7 @@
   color: var(--grey-2);
 }
 
-.select > option {
+.select>option {
   background-color: white;
   font-size: 16px;
   font-weight: 400;
@@ -260,14 +260,14 @@
 }
 
 .blocker {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-    background-color: #00000080;
-    position: fixed;
-    top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #00000080;
+  position: fixed;
+  top: 0;
 }
 
 .pop-up {

@@ -86,7 +86,6 @@ export default class Api {
       .then((response) => response.json())
       .catch((error) => console.log(error));
   }
-}
 
   static getHabitById(id) {
     const apiURL = `https://habits-kenzie.herokuapp.com/api/habits/${id}`
@@ -117,7 +116,7 @@ export default class Api {
     }
 
     const apiResponse = fetch(apiURL, options).then(res => res.json()).catch(error => error)
-    
+
     return apiResponse
   }
 }

@@ -3,7 +3,7 @@ export default class MainView {
         const tableBody = document.querySelector('.habits__table-body')
         tableBody.innerHTML = ''
 
-        habitsList.forEach(({habit_id, habit_title, habit_description, habit_category, habit_status}) => {
+        habitsList.forEach(({ habit_id, habit_title, habit_description, habit_category, habit_status }) => {
             const tableRow = document.createElement('tr')
             tableRow.classList.add('data-row')
 
@@ -29,7 +29,7 @@ export default class MainView {
             title.innerText = habit_title
 
             secondCell.append(title)
-            
+
             const thirdCell = document.createElement('td')
             thirdCell.classList.add('body-data', 'text-2--500')
 
@@ -71,8 +71,8 @@ export default class MainView {
         allCheckbox.forEach(checkbox => {
             const eventTableRow = checkbox.parentElement.parentElement.parentElement
             const habitText = checkbox.parentElement.parentElement.parentElement.childNodes[1]
-            
-            if(checkbox.checked === true) {
+
+            if (checkbox.checked === true) {
                 eventTableRow.classList.add('habit-checked')
                 habitText.classList.add('text-checked')
             } else {

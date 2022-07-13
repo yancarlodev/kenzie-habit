@@ -8,98 +8,100 @@ export default class Header {
     const seta = document.querySelector(".container-seta")
 
     button.addEventListener("click", () => {
-        seta.classList.toggle("hidden")
-        popUp.classList.toggle("hidden")
+      seta.classList.toggle("hidden")
+      popUp.classList.toggle("hidden")
     })
-}
+  }
 
-static profileHeader(userName, userImg, userDscr) {
-  const wrapperHeader = document.querySelector(".wrapper__header--img");
-  const wrapperImg = document.querySelector(".wrapper__sub-header--img");
-  const wrapperName = document.querySelector(
-    ".wrapper__sub-header--username"
-  );
+  static profileHeader(userName, userImg, userDscr) {
+    const wrapperHeader = document.querySelector(".wrapper__header--img");
+    const wrapperImg = document.querySelector(".wrapper__sub-header--img");
+    const wrapperName = document.querySelector(
+      ".wrapper__sub-header--username"
+    );
 
-  wrapperHeader.innerHTML = "";
-  wrapperImg.innerHTML = "";
-  wrapperName.innerHTML = "";
-  const imgProfile = document.createElement("img");
-  imgProfile.classList.add("");
-  imgProfile.src = userImg;
-  imgProfile.alt = "user-img";
-  imgProfile.id = "header--button";
+    wrapperHeader.innerHTML = "";
+    wrapperImg.innerHTML = "";
+    wrapperName.innerHTML = "";
+    const imgProfile = document.createElement("img");
+    imgProfile.classList.add("");
+    imgProfile.src = userImg;
+    imgProfile.alt = "user-img";
+    imgProfile.id = "header--button";
 
-  const img = document.createElement("img");
-  img.src = userImg;
-  img.alt = "user-img";
+    const img = document.createElement("img");
+    img.src = userImg;
+    img.alt = "user-img";
 
-  name.innerText = userName;
-  name.classList.add("title-4");
+    name.innerText = userName;
+    name.classList.add("title-4");
 
-  dscrp.classList.add("user-description");
+    dscrp.classList.add("user-description");
 
-  wrapperHeader.appendChild(imgProfile);
-  wrapperImg.appendChild(img);
-  wrapperName.appendChild(name);
+    wrapperHeader.appendChild(imgProfile);
+    wrapperImg.appendChild(img);
+    wrapperName.appendChild(name);
+  }
 
-static logout() {
+  static logout() {
     const buttonLogout = document.getElementById("logout")
 
     buttonLogout.addEventListener("click", () => {
-            location.href = "../src/pages/index.html"
-            localStorage.removeItem("@kenzie-habit:user")
-            localStorage.removeItem("@kenzie-habit:token")
+      location.href = "../src/pages/index.html"
+      localStorage.removeItem("@kenzie-habit:user")
+      localStorage.removeItem("@kenzie-habit:token")
     })
+  }
 
   static async userData() {
     const response = await fetch("https://habits-kenzie.herokuapp.com/api/habits", {
-        "method": "GET",
-        "headers": {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${this.token}`
-        },
+      "method": "GET",
+      "headers": {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${this.token}`
+      },
     })
-    .then((res) => res.json())
-    .then((res) => {
+      .then((res) => res.json())
+      .then((res) => {
         console.log(res)
-    })
-    .catch((error) => error)
+      })
+      .catch((error) => error)
     return response
-}
+  }
 
-static editProfile() {
-  const buttonEdit = document.getElementById("edit-perfil")
-  const modalEdit = document.querySelector("#containerProfileModal")
-  const buttonModalX = document.querySelector("#closeButtonEditProfile")
+  static editProfile() {
+    const buttonEdit = document.getElementById("edit-perfil")
+    const modalEdit = document.querySelector("#containerProfileModal")
+    const buttonModalX = document.querySelector("#closeButtonEditProfile")
 
-  buttonEdit.addEventListener("click", (e) => {
-    e.preventDefault()
-    modalEdit.classList.toggle("hidden")
-  })
+    buttonEdit.addEventListener("click", (e) => {
+      e.preventDefault()
+      modalEdit.classList.toggle("hidden")
+    })
 
-  buttonModalX.addEventListener("click", (e) => {
-    e.preventDefault()
-    modalEdit.classList.toggle("hidden")
-  })
-}
+    buttonModalX.addEventListener("click", (e) => {
+      e.preventDefault()
+      modalEdit.classList.toggle("hidden")
+    })
+  }
 
-static getInputsEditProfile() {
-  const form = document.querySelector(".modal-crair-profile-form");
-  const section = document.querySelector("#containerProfileModal");
-  const arrayForm = Array.from(form.elements);
+  static getInputsEditProfile() {
+    const form = document.querySelector(".modal-crair-habito-form");
+    const section = document.querySelector("#containerProfileModal");
+    const arrayForm = Array.from(form.elements);
 
-  form.addEventListener("submit", async (event) => {
-    event.preventDefault();
-    let obj = {
-      usr_name: arrayForm[0].value,
-      usr_image: arrayForm[1].value,
-    };
-    this.profileHeader(obj.usr_name, obj.usr_image);
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      let obj = {
+        usr_name: arrayForm[0].value,
+        usr_image: arrayForm[1].value,
+      };
+      this.profileHeader(obj.usr_name, obj.usr_image);
 
-    let api = await Api.editProfile(obj);
+      let api = await Api.editProfile(obj);
 
-    section.classList.add("hidden");
-  });
-}
+      section.classList.add("hidden");
+    });
+  }
 }
 
