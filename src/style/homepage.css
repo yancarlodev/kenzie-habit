@@ -126,22 +126,18 @@ body {
 
 #seta {
     position: absolute;
-    top: 40px;
+    top: 41px;
     right: 13px;
     width: 10px;
     height: 10px;
-    background-color: rgb(255, 255, 255);
+    background-color: white;
     clip-path: polygon(50% 0, 100% 100%, 0 100%);
 }
 
 .container-seta {
-    filter: drop-shadow(0px 0px 7px #000000);
-}
+    filter: drop-shadow(0px 0px 10px #3f3f3f);
 
-.container-seta {
-    filter: drop-shadow(0px 0px 7px #000000);
 }
-
 
 .wrapper__header--logo h1 {
     align-items: center;
