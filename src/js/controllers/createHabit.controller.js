@@ -17,7 +17,7 @@ export default class createHabit {
           dados[input.name] = input.value;
         }
       });
-        if (Main.messageError() === false) {
+        if (MainView.messageError() === false) {
             const request = await Api.createHabit(dados);
       
             MainView.renderAllHabits(Api.habitReadAll())
