@@ -6,6 +6,8 @@ export default class createHabit {
     const modal = document.querySelector("#modal-criar");
     const pop_up = document.querySelector(".container_pop-up_create-habit");
     const buttonInserir = document.querySelector(".button-inserir");
+    const edit = document.querySelector("#edit-habit")
+    const modalEdit = document.querySelector(".container_edit-habit")
 
     buttonInserir.addEventListener("click", async (e) => {
       e.preventDefault();
@@ -22,5 +24,8 @@ export default class createHabit {
       MainView.renderAllHabits(Api.habitReadAll())
       modal.classList.add('hidden')
     });
+    edit.addEventListener("click", (e) => {
+       modalEdit.classList.add("hidden")
+    })
   }
 }
