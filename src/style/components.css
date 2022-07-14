@@ -43,6 +43,10 @@
   color: var(--grey-1);
 }
 
+.title-4--white {
+  color: white;
+}
+
 .title-5 {
   font-size: 16px;
   font-weight: 600;

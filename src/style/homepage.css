@@ -46,9 +46,7 @@
     position: relative;
 }
 
-
-
-.wrapper__header--img img {
+.wrapper__header--img .img--header {
     width: 40px;
     height: 40px;
     border: solid 2px var(--primary-1);
@@ -56,12 +54,12 @@
 }
 
 .wrapper__header--img button {
-    height: 5px;
     background-color: white;
     border-style: none;
 }
 
 #wrapper__header--pop-up {
+    z-index: 0;
     position: absolute;
     right: 8px;
     top: 50px;
@@ -80,9 +78,6 @@
     font-size: 20px;
 }
 
-.wrapper__edit {
-    margin-bottom: 20px;
-}
 
 #wrapper__header--pop-up button {
     font-size: 10px;
@@ -96,7 +91,7 @@
     display: none;
 }
 
-#edit-perfil {
+.wrapper__edit {
     margin-bottom: 12px;
 }
 
@@ -120,11 +115,10 @@
     background-color: #F1F3F5;
 }
 
-
 #seta {
     position: absolute;
-    bottom: -10px;
-    left: 20px;
+    top: 40px;
+    right: 13px;
     width: 10px;
     height: 10px;
     background-color: rgb(255, 255, 255);
@@ -161,7 +155,7 @@
 }
 
 
-.wrapper__sub-header--img img {
+.wrapper__sub-header--img .img--subheader {
     margin: 0;
     width: 60px;
     height: 60px;
@@ -370,26 +364,28 @@
     #wrapper__header--pop-up {
         margin: 0;
         width: 140px;
-        height: 78px;
+        height: max-content;
     }
 
-    #wrapper__header--pop-up .wrapper__edit {
+    .wrapper__edit {
+        margin-bottom: 12px;
+    }
+
+    #edit-perfil {
         margin: 0;
-        height: 30px;
-        margin-bottom: 5px;
     }
 
     #wrapper__header--pop-up .wrapper__logout {
         margin: 0;
-        height: 30px;
     }
 
     .fa-arrow-left,
     .fa-user {
-        font-size: 13px;
+        font-size: 16px;
     }
 
     #wrapper__header--pop-up p {
+        
         display: inline-block;
         margin-left: 8px;
     }
