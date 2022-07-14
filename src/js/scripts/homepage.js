@@ -19,6 +19,7 @@ createHabit.controllerHabit()
 Delete.deleleHabit()
 
 MainView.renderAllHabits(Api.habitReadAll())
+Main.loadMoreButton()
 Main.clickCheckbox()
 Main.clickButtonEdit()
 MainView.checkIfItsComplete()
