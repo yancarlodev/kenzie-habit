@@ -1,5 +1,6 @@
 import Api from "../models/Api.model.js";
 import MainView from "../views/Main.view.js";
+import Main from "./Main.controller.js";
 
 export default class createHabit {
   static controllerHabit() {
@@ -18,14 +19,15 @@ export default class createHabit {
           dados[input.name] = input.value;
         }
       });
-
-      const request = await Api.createHabit(dados);
-
-      MainView.renderAllHabits(Api.habitReadAll())
-      modal.classList.add('hidden')
-    });
+        if (Main.messageError() === false) {
+            const request = await Api.createHabit(dados);
+      
+            MainView.renderAllHabits(Api.habitReadAll())
+            modal.classList.add('hidden')
+          } 
+      });
     edit.addEventListener("click", (e) => {
-       modalEdit.classList.add("hidden")
+      modalEdit.classList.add("hidden")
     })
   }
 }
