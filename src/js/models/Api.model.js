@@ -37,6 +37,7 @@ export default class Api {
       .catch((err) => console.log(err));
   }
   static async habitEdit(data, habit_Id) {
+
     return await fetch(`${this.url_edit}${habit_Id}`, {
       method: "PATCH",
       headers: this.headers,
