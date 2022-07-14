@@ -7,6 +7,8 @@ export default class Delete {
     const modalEdit = document.querySelector("#edit-modal");
     const backButton = document.querySelector("#cancelar");
     const buttonDelete = document.querySelector(".button_red");
+    const buttonExit = document.querySelector("#exit")
+
     button.addEventListener("click", (e) => {
       e.preventDefault();
       modalEdit.classList.add("hidden");
@@ -21,9 +23,11 @@ export default class Delete {
       e.preventDefault()
       const id = e.target.id;
       location.reload(true)
-      const deleteRequest = await Api.habitDelete(id);
-      
+      const deleteRequest = await Api.habitDelete(id); 
     });
+    buttonExit.addEventListener("click", (e) => {
+        modalDelete.classList.add("hidden")
+    })
   }
 }
 
