@@ -61,6 +61,8 @@ export default class Main {
                 const inputArray = [...editForm.elements]
 
                 const habit = await Api.getHabitById(event.target.id)
+                const idButton = document.querySelector('.button_red')
+                idButton.id = event.target.id
 
                 inputArray.forEach(input => {
                     if (input.tagName != 'BUTTON') {
