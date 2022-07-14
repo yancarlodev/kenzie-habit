@@ -338,16 +338,20 @@ body {
     width: 100%;
 }
 
-.container_pop-up_create-habit {
-    transition-timing-function: ease;
+.container_pop-up_edit-habit, .container_pop-up_create-habit, .container_pop-up_create-user, .container_pop-up_edit-profile {
+    animation: popUpAnimation 1.5s infinite alternate;
+    position: fixed;
+    width: 270px;
+    bottom: 30px;
+    right: 25px;
 }
 
-.container_pop-up_edit-habit {
-    transition-timing-function: ease;
-    position: relative;
-    bottom: 2050px;
-    right: -170;
-}
+.img_pop-up {
+    width: 60px;
+  }
+  .pop-up_title {
+    margin-bottom: 5px;
+  }
 
 @media (min-width: 900px) {
 
@@ -505,12 +509,5 @@ body {
 
     .pop-up {
         width: 400px;
-    }
-
-    .container_pop-up_edit-habit {
-        transition-timing-function: ease;
-        position: relative;
-        bottom: 2050px;
-        right: -413px;
     }
 }
