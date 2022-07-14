@@ -346,3 +346,17 @@ h1, h2, h3, h4, p, th, span {
     transform: rotateX(0);
   }
 }
+
+@keyframes popUpAnimation {
+  0% {
+    right: -400px;
+  }
+
+  50% {
+    right: 25px;
+  }
+
+  100% {
+    right: 25px;
+  }
+}

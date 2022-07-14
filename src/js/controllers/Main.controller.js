@@ -13,7 +13,6 @@ export default class Main {
         const popUp = document.querySelector(".container_pop-up_create-habit")
         const inputTitle = document.querySelector("#habit_title")
         
-        console.log(inputTitle.value)
         button.addEventListener("click", event => {
             event.preventDefault()
             
@@ -26,13 +25,13 @@ export default class Main {
 
         buttonInserir.addEventListener("click", (e) => {
             e.preventDefault()
-            if(inputTitle.value != "") {
-                popUp.classList.toggle("hidden");
-                setTimeout(() => {
-                    popUp.classList.toggle("hidden");
-                }, 3000)
-            }
+
             sectionModal.classList.add("hidden")
+
+            popUp.classList.toggle("hidden");
+            setTimeout(() => {
+                popUp.classList.toggle("hidden");
+            }, 3000)
         })
     }
 
@@ -74,7 +73,6 @@ export default class Main {
         const editModal = document.querySelector('#edit-modal')
         const editForm = document.querySelector('.modal-edit-habito-form')
         const popUp = document.querySelector(".container_pop-up_edit-habit")
-        const buttonSave = document.querySelector("#buttonSave")
         
         tableBody.addEventListener('click', async event => {
             if (event.target.tagName === 'BUTTON') {
@@ -83,16 +81,6 @@ export default class Main {
                 const inputArray = [...editForm.elements]
 
                 const habit = await Api.getHabitById(event.target.id)
-                
-                buttonSave.addEventListener("click", (e) => {
-                    e.preventDefault()
-                    console.log("Hábito editado com sucesso!")
-                    popUp.classList.toggle("hidden");
-                    setTimeout(() => {
-                        popUp.classList.toggle("hidden");
-                    }, 3000)
-                    editModal.classList.toggle("hidden")
-                })
 
                 this.currentHabitId = event.target.id
 
@@ -113,8 +101,6 @@ export default class Main {
                 editHabitController.resetAlterationObject()
             }
         })
-
-        
     }
 
     static clickCheckbox() {
@@ -122,9 +108,7 @@ export default class Main {
 
         tableBody.addEventListener("click", (event) => {
         if (event.target.type === "checkbox") {
-            // const statusObject = {
-            //     habit_status: event.target.checked
-            // }
+
             const buttonId = event.composedPath()[3].childNodes[4].childNodes[0].id;
 
             Api.habitComplete(buttonId);

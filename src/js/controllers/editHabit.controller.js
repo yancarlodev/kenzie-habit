@@ -7,6 +7,7 @@ export default class editHabitController {
 
     static getUserInput() {
         const form = document.querySelector('.modal-edit-habito-form')
+        const popUp = document.querySelector('.container_pop-up_edit-habit')
         const editModal = document.querySelector('#edit-modal')
 
         const formInputs = [...form]
@@ -21,12 +22,29 @@ export default class editHabitController {
             })
 
             Api.habitEdit(this.alterationsObject, Main.currentHabitId)
-            MainView.renderAllHabits(Api.habitReadAll())
+            setTimeout(() => {
+                MainView.renderAllHabits(Api.habitReadAll())
+            }, 200)
+            
             editModal.classList.add('hidden')
+
+            popUp.classList.remove("hidden");
+            setTimeout(() => {
+                popUp.classList.add("hidden");
+            }, 3000)
         })
     }
 
     static resetAlterationObject() {
         this.alterationsObject = {}
+    }
+
+    static closeButton() {
+        const closeButton = document.querySelector('#edit-habit')
+        const modal = document.querySelector('#edit-modal')
+
+        closeButton.addEventListener('click', event => {
+            modal.classList.add('hidden')
+        })
     }
 }

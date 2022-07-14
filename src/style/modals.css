@@ -58,6 +58,11 @@
   margin-top: 16px;
 }
 
+.delete-modal {
+  max-width: 520px;
+  width: 55%;
+}
+
 @media screen and (min-width: 990px) {
   .buttons-row {
     flex-direction: row;

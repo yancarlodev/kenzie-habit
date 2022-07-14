@@ -13,9 +13,7 @@ export default class Header {
       }
     )
       .then((res) => res.json())
-      .then((res) => {
-        console.log(res);
-      })
+      .then((res) => res)
       .catch((error) => error);
     return response;
   }
@@ -102,6 +100,7 @@ export default class Header {
     const form = document.querySelector(".modal-crair-habito-form");
     const button = document.querySelector("#button-save");
     const section = document.querySelector("#containerProfileModal");
+    const popUp = document.querySelector('.container_pop-up_edit-profile')
 
     button.addEventListener("click", async (e) => {
       e.preventDefault();
@@ -119,6 +118,11 @@ export default class Header {
 
       await this.changeUserImgAndName(obj);
       section.classList.add("hidden");
+
+      popUp.classList.remove("hidden");
+        setTimeout(() => {
+            popUp.classList.add("hidden");
+        }, 3000)
     });
   }
 

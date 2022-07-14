@@ -24,4 +24,6 @@ Main.clickCheckbox()
 Main.clickButtonEdit()
 MainView.checkIfItsComplete()
 
+
 editHabitController.getUserInput()
+editHabitController.closeButton()
