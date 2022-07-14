@@ -1,7 +1,10 @@
 import Api from "../models/Api.model.js";
 import MainView from "../views/Main.view.js";
+import editHabitController from "./editHabit.controller.js";
 
 export default class Main {
+    static currentHabitId = 0
+    
     static clickButttonCreate() {
         const button = document.querySelector(".section__filter--button")
         const sectionModal = document.querySelector("#modal-criar")
@@ -61,6 +64,7 @@ export default class Main {
                 const inputArray = [...editForm.elements]
 
                 const habit = await Api.getHabitById(event.target.id)
+                this.currentHabitId = event.target.id
 
                 inputArray.forEach(input => {
                     if (input.tagName != 'BUTTON') {
@@ -71,6 +75,8 @@ export default class Main {
                         }
                     }
                 })
+
+                editHabitController.resetAlterationObject()
             }
         })
     }
