@@ -84,15 +84,15 @@ export default class Main {
 
                 const habit = await Api.getHabitById(event.target.id)
                 
-                buttonSave.addEventListener("click", (e) => {
-                    e.preventDefault()
-                    console.log("Hábito editado com sucesso!")
-                    popUp.classList.toggle("hidden");
-                    setTimeout(() => {
-                        popUp.classList.toggle("hidden");
-                    }, 3000)
-                    editModal.classList.toggle("hidden")
-                })
+                // buttonSave.addEventListener("click", (e) => {
+                //     e.preventDefault()
+                //     console.log("Hábito editado com sucesso!")
+                //     popUp.classList.toggle("hidden");
+                //     setTimeout(() => {
+                //         popUp.classList.toggle("hidden");
+                //     }, 3000)
+                //     editModal.classList.toggle("hidden")
+                // })
 
                 this.currentHabitId = event.target.id
 

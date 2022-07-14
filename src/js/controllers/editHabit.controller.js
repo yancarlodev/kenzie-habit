@@ -21,7 +21,9 @@ export default class editHabitController {
             })
 
             Api.habitEdit(this.alterationsObject, Main.currentHabitId)
-            MainView.renderAllHabits(Api.habitReadAll())
+            setTimeout(() => {
+                MainView.renderAllHabits(Api.habitReadAll())
+            }, 200)
             editModal.classList.add('hidden')
         })
     }
