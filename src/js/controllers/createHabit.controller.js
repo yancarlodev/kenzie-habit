@@ -21,6 +21,8 @@ export default class createHabit {
       if (request.habit_id !== undefined) {
         modal.style.display = "none";
         pop_up.style.display = "flex";
+      }else{
+        alert(request.messege)
       }
     });
   }

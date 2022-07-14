@@ -5,6 +5,8 @@ export default class MainView {
         tableBody.innerHTML = ''
 
         habitListAwaited.forEach(({ habit_id, habit_title, habit_description, habit_category, habit_status }) => {
+            
+           
             const tableRow = document.createElement('tr')
             tableRow.classList.add('data-row')
 
