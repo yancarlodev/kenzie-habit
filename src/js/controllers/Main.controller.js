@@ -17,6 +17,39 @@ export default class Main {
         })
     }
 
+    static async showAllComplets() {
+        const button = document.querySelector("#postsConcluded");
+        const posts = await Api.habitReadAll();
+        const tableBody = document.querySelector('.habits__table-body');
+
+        button.addEventListener("click", async event => {
+            const posts = await Api.habitReadAll()
+            event.preventDefault()
+
+            tableBody.innerHTML = "";
+            
+            const truePosts = posts.filter(post => {
+                if (post.habit_status) {
+                    return true
+                }
+            })
+            await MainView.renderAllHabits(truePosts)
+        })
+    }
+
+    static showAll() {
+        const buttonTodos = document.querySelector("#allPosts");
+        const tableBody = document.querySelector('.habits__table-body');
+        
+        buttonTodos.addEventListener("click", async event => {
+            const todos = await Api.habitReadAll()
+            event.preventDefault()
+
+            tableBody.innerHTML = ""
+            await MainView.renderAllHabits(todos)
+        })
+    }
+
     static clickButtonEdit() {
         const tableBody = document.querySelector('.habits__table-body')
         const editModal = document.querySelector('#edit-modal')
