@@ -60,11 +60,12 @@ export default class Header {
   static logout() {
       const buttonLogout = document.getElementById("logout")
 
-      buttonLogout.addEventListener("click", () => {
-              location.href = "../../index.html"
-              localStorage.removeItem("@kenzie-habit:user")
-              localStorage.removeItem("@kenzie-habit:token")
-      })
+
+    buttonLogout.addEventListener("click", () => {
+      location.href = "../../index.html"
+      localStorage.removeItem("@kenzie-habit:user")
+      localStorage.removeItem("@kenzie-habit:token")
+    })
   }
 
   static editProfile() {

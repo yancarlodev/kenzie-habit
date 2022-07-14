@@ -1,4 +1,5 @@
 import Api from "../models/Api.model.js";
+import MainView from "../views/Main.view.js";
 
 export default class createHabit {
   static controllerHabit() {
@@ -17,11 +18,9 @@ export default class createHabit {
       });
 
       const request = await Api.createHabit(dados);
-      console.log(request);
-      if (request.habit_id !== undefined) {
-        modal.style.display = "none";
-        pop_up.style.display = "flex";
-      }
+
+      MainView.renderAllHabits(Api.habitReadAll())
+      modal.classList.add('hidden')
     });
   }
 }

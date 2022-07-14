@@ -2,6 +2,10 @@
     font-family: 'Inter', sans-serif;
 }
 
+body {
+    padding-bottom: 60px;
+}
+
 .header__container {
     width: 100%;
 }
@@ -216,6 +220,7 @@
 
 .habits-container {
     margin-top: 12px;
+    margin-bottom: 36px;
 }
 
 .habits__table {
@@ -309,6 +314,7 @@
     border-radius: 4px;
     background-color: var(--primary-3);
     color: var(--primary-1);
+    text-transform: capitalize;
 }
 
 .habit-checked {
@@ -317,6 +323,12 @@
 
 .text-checked {
     text-decoration: line-through;
+}
+
+.load-more__container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 @media (min-width: 900px) {
@@ -470,5 +482,6 @@
 
     .habits-container {
         margin-top: 25px;
+        margin-bottom: 53px;
     }
 }

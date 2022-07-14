@@ -5,6 +5,8 @@ export default class MainView {
         tableBody.innerHTML = ''
 
         habitListAwaited.forEach(({ habit_id, habit_title, habit_description, habit_category, habit_status }) => {
+            
+           
             const tableRow = document.createElement('tr')
             tableRow.classList.add('data-row')
 
@@ -45,7 +47,7 @@ export default class MainView {
 
             const category = document.createElement('p')
             category.classList.add('habit-category')
-            category.innerText = habit_category
+            habit_category === 'saude' ? category.innerText = 'Saúde' : category.innerText = habit_category
 
             forthCell.append(category)
 

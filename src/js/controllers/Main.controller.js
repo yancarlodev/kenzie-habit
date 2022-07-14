@@ -1,5 +1,5 @@
-import Api from "../models/Api.model.js"
-import MainView from "../views/Main.view.js"
+import Api from "../models/Api.model.js";
+import MainView from "../views/Main.view.js";
 
 export default class Main {
     static clickButttonCreate() {
@@ -14,6 +14,39 @@ export default class Main {
         spanX.addEventListener("click", event => {
             event.preventDefault()
             sectionModal.classList.add("hidden")
+        })
+    }
+
+    static async showAllComplets() {
+        const button = document.querySelector("#postsConcluded");
+        const posts = await Api.habitReadAll();
+        const tableBody = document.querySelector('.habits__table-body');
+
+        button.addEventListener("click", async event => {
+            const posts = await Api.habitReadAll()
+            event.preventDefault()
+
+            tableBody.innerHTML = "";
+            
+            const truePosts = posts.filter(post => {
+                if (post.habit_status) {
+                    return true
+                }
+            })
+            await MainView.renderAllHabits(truePosts)
+        })
+    }
+
+    static showAll() {
+        const buttonTodos = document.querySelector("#allPosts");
+        const tableBody = document.querySelector('.habits__table-body');
+        
+        buttonTodos.addEventListener("click", async event => {
+            const todos = await Api.habitReadAll()
+            event.preventDefault()
+
+            tableBody.innerHTML = ""
+            await MainView.renderAllHabits(todos)
         })
     }
 
@@ -42,21 +75,21 @@ export default class Main {
         })
     }
 
-    static clickCheckbox() {
-        const tableBody = document.querySelector('.habits__table-body')
+  static clickCheckbox() {
+    const tableBody = document.querySelector(".habits__table-body");
 
-        tableBody.addEventListener('click', event => {
-            if (event.target.type === 'checkbox') {
-                // const statusObject = {
-                //     habit_status: event.target.checked
-                // }
+    tableBody.addEventListener("click", (event) => {
+      if (event.target.type === "checkbox") {
+        // const statusObject = {
+        //     habit_status: event.target.checked
+        // }
 
-                const buttonId = event.composedPath()[3].childNodes[4].childNodes[0].id
+        const buttonId = event.composedPath()[3].childNodes[4].childNodes[0].id;
 
-                Api.habitComplete(buttonId)
+        Api.habitComplete(buttonId);
 
-                MainView.checkIfItsComplete()
-            }
-        })
-    }
+        MainView.checkIfItsComplete();
+      }
+    });
+  }
 }
