@@ -128,4 +128,13 @@ export default class Main {
         }
         return hasError
     }
+
+    static loadMoreButton() {
+        const button = document.querySelector('.load-more')
+        
+        button.addEventListener('click', event => {
+            MainView.rangeNumber += 10
+            MainView.renderAllHabits(Api.habitReadAll())
+        })
+    }
 }
