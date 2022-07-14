@@ -6,13 +6,29 @@ export default class Main {
         const button = document.querySelector(".section__filter--button")
         const sectionModal = document.querySelector("#modal-criar")
         const spanX = document.querySelector(".fa-x")
-
+        const buttonInserir = document.querySelector(".button--big")
+        const popUp = document.querySelector(".container_pop-up_create-habit")
+        const inputTitle = document.querySelector("#habit_title")
+        
+        console.log(inputTitle.value)
         button.addEventListener("click", event => {
             event.preventDefault()
+            
             sectionModal.classList.remove("hidden")
         })
         spanX.addEventListener("click", event => {
             event.preventDefault()
+            sectionModal.classList.add("hidden")
+        })
+
+        buttonInserir.addEventListener("click", (e) => {
+            e.preventDefault()
+            if(inputTitle.value != "") {
+                popUp.classList.toggle("hidden");
+                setTimeout(() => {
+                    popUp.classList.toggle("hidden");
+                }, 3000)
+            }
             sectionModal.classList.add("hidden")
         })
     }
@@ -54,18 +70,31 @@ export default class Main {
         const tableBody = document.querySelector('.habits__table-body')
         const editModal = document.querySelector('#edit-modal')
         const editForm = document.querySelector('.modal-edit-habito-form')
-
+        const popUp = document.querySelector(".container_pop-up_edit-habit")
+        const buttonSave = document.querySelector("#buttonSave")
+        
         tableBody.addEventListener('click', async event => {
             if (event.target.tagName === 'BUTTON') {
                 editModal.classList.remove('hidden')
+               
                 const inputArray = [...editForm.elements]
 
                 const habit = await Api.getHabitById(event.target.id)
+                
+                buttonSave.addEventListener("click", (e) => {
+                    e.preventDefault()
+                    console.log("Hábito editado com sucesso!")
+                    popUp.classList.toggle("hidden");
+                    setTimeout(() => {
+                        popUp.classList.toggle("hidden");
+                    }, 3000)
+                    editModal.classList.toggle("hidden")
+                })
 
                 inputArray.forEach(input => {
                     if (input.tagName != 'BUTTON') {
                         if (input.type != 'checkbox') {
-                            input.value = habit[input.name]
+                            input.value = habit[input.name] 
                         } else {
                             input.checked = habit[input.name]
                         }
@@ -73,6 +102,8 @@ export default class Main {
                 })
             }
         })
+
+        
     }
 
   static clickCheckbox() {
