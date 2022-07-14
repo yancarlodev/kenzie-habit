@@ -13,6 +13,8 @@ Header.logout()
 Header.getInputsEditProfile();
 
 Main.clickButttonCreate()
+Main.showAllComplets()
+Main.showAll()
 createHabit.controllerHabit()
 Delete.deleleHabit()
 
