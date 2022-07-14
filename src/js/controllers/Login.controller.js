@@ -1,4 +1,4 @@
-import Api from "../models/Api.model.js"
+import Api from "../models/Api.model.js";
 
 export default class LoginController {
   static controllerLogin() {
@@ -17,6 +17,10 @@ export default class LoginController {
       if (request.token !== undefined) {
         location.href = "./src/pages/homepage.html";
       } else {
+        const inputEmail = document.querySelector(".input-email");
+        const inputSenha = document.querySelector(".input-senha");
+        inputEmail.classList.add("input--error");
+        inputSenha.classList.add("input--error");
         alert(request.message);
       }
     });
