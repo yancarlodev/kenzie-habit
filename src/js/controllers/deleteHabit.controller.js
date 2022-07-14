@@ -24,8 +24,9 @@ export default class Delete {
     buttonDelete.addEventListener("click", async (e) => {
       e.preventDefault()
       const id = e.target.id;
-      MainView.renderAllHabits(Api.habitReadAll())
+     
       const deleteRequest = await Api.habitDelete(id); 
+      MainView.renderAllHabits(Api.habitReadAll())
       modalDelete.classList.add("hidden")
       console.log(deleteRequest)
     });

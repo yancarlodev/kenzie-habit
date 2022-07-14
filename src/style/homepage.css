@@ -331,10 +331,22 @@ body {
     text-decoration: line-through;
 }
 
+
 .load-more__container {
     display: flex;
     justify-content: center;
     width: 100%;
+}
+
+.container_pop-up_create-habit {
+    transition-timing-function: ease;
+}
+
+.container_pop-up_edit-habit {
+    transition-timing-function: ease;
+    position: relative;
+    bottom: 2050px;
+    right: -170;
 }
 
 @media (min-width: 900px) {
@@ -489,5 +501,16 @@ body {
     .habits-container {
         margin-top: 25px;
         margin-bottom: 53px;
+    }
+
+    .pop-up {
+        width: 400px;
+    }
+
+    .container_pop-up_edit-habit {
+        transition-timing-function: ease;
+        position: relative;
+        bottom: 2050px;
+        right: -413px;
     }
 }
