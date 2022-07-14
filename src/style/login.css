@@ -2,7 +2,9 @@
   font-family: 'Inter', sans-serif;
 }
 
-
+body {
+  animation: transitionPages 750ms;
+}
 
 .container_main {
   display: flex;
