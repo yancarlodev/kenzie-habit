@@ -55,9 +55,9 @@
 
                 </div>
                 <div class="wrapper__sub-header--username">
-                   
+                
                 </div>
-                 
+                
             </div>
             </div>
         </div>  
@@ -122,10 +122,12 @@
 
                     <label class="text-3" for="habit_title">Titulo</label>
                     <input  class="input" type="text" name="habit_title" id="habit_title" placeholder="Digitar título" required />
+                    <p class="text-3 text-3--error hidden" id="title_error">Campo obrigatório!</p>
 
                     <label class="text-3" for="habit_description">Descrição</label>
                     <textarea required class="input" name="habit_description" id="habit_description" rows="3"
                         placeholder="Digitar descrição"></textarea>
+                        <p class="text-3 text-3--error hidden" id="description_error">Campo obrigatório!</p>
 
                     <label class="text-3" for="habit_category">Categoria</label>
                     <select class="input" name="habit_category" id="habit_category">
