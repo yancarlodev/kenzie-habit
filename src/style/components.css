@@ -272,6 +272,7 @@
   background-color: #00000080;
   position: fixed;
   top: 0;
+  animation: transitionPages 500ms;
 }
 
 .pop-up {
@@ -311,4 +312,37 @@
   max-width: 502px;
   min-width: 305px;
   padding: 32px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(201, 201, 201);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(160, 160, 160);
+}
+
+h1, h2, h3, h4, p, th, span {
+  cursor: default;
+}
+
+@keyframes transitionPages {
+  from {
+    opacity: 0;
+    transform: rotateX(-10deg);
+  }
+  
+  to {
+    opacity: 1;
+    transform: rotateX(0);
+  }
 }
