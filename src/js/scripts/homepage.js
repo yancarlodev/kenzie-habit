@@ -5,7 +5,10 @@ import createHabit from "../controllers/createHabit.controller.js";
 import MainView from "../views/Main.view.js";
 import Api from "../models/Api.model.js";
 import editHabitController from "../controllers/editHabit.controller.js";
+import Anonymous from "../views/Anonymous.js";
 
+
+Anonymous.redirectLogin()
 Header.changeUserImgAndName(Api.user);
 Header.buttonCard();
 Header.editProfile();
