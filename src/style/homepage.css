@@ -263,6 +263,7 @@ body {
     text-align: center;
     vertical-align: middle;
     height: 49px;
+    animation: transitionPages 750ms;
 }
 
 .body-data:nth-child(n+2):nth-child(-n+4),

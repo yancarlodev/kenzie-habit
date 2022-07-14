@@ -272,6 +272,7 @@
   background-color: #00000080;
   position: fixed;
   top: 0;
+  animation: transitionPages 500ms;
 }
 
 .pop-up {
@@ -311,6 +312,10 @@
   max-width: 502px;
   min-width: 305px;
   padding: 32px;
+}
+
+h1, h2, h3, h4, p, th, span {
+  cursor: default;
 }
 
 @keyframes transitionPages {
