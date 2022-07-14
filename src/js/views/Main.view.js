@@ -45,7 +45,7 @@ export default class MainView {
 
             const category = document.createElement('p')
             category.classList.add('habit-category')
-            category.innerText = habit_category
+            habit_category === 'saude' ? category.innerText = 'Saúde' : category.innerText = habit_category
 
             forthCell.append(category)
 
