@@ -18,7 +18,7 @@ export default class createHabit {
       });
 
       const request = await Api.createHabit(dados);
-      
+
       MainView.renderAllHabits(Api.habitReadAll())
       modal.classList.add('hidden')
     });
