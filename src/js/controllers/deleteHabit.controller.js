@@ -1,4 +1,6 @@
 import Api from "../models/Api.model.js";
+import Main from "./Main.controller.js";
+import MainView from "../views/Main.view.js";
 
 export default class Delete {
   static deleleHabit() {
@@ -22,8 +24,10 @@ export default class Delete {
     buttonDelete.addEventListener("click", async (e) => {
       e.preventDefault()
       const id = e.target.id;
-      location.reload(true)
+      MainView.renderAllHabits(Api.habitReadAll())
       const deleteRequest = await Api.habitDelete(id); 
+      modalDelete.classList.add("hidden")
+      console.log(deleteRequest)
     });
     buttonExit.addEventListener("click", (e) => {
         modalDelete.classList.add("hidden")
