@@ -1,4 +1,5 @@
 import Api from "../models/Api.model.js";
+import MainView from "../views/Main.view.js";
 
 export default class Header {
   static async userData() {
@@ -112,6 +113,7 @@ export default class Header {
         usr_image: inputImg.value,
       };
 
+      if (MainView.messageErrorProfile() === false) { 
       await Api.editProfile(obj);
 
       localStorage.setItem("@kenzie-habit:user", JSON.stringify(obj));
@@ -123,8 +125,9 @@ export default class Header {
         setTimeout(() => {
             popUp.classList.add("hidden");
         }, 3000)
-    });
-  }
+      }
+  });
+}
 
   static async changeUserImgAndName(user) {
     let obj = {

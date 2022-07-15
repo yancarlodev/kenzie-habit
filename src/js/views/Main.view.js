@@ -117,4 +117,31 @@ export default class MainView {
         }
         return hasError
     }
+
+    static messageErrorProfile() {
+        const editProfile = document.querySelector("#inputName")
+        const editUrlImage = document.querySelector("#inputImg")
+        let hasError = false
+
+        const editProfileErr = document.querySelector("#nameErr")
+        const editImageErr = document.querySelector("#urlImageErr")
+
+        if (editProfile.value === "") {
+            editProfileErr.classList.remove("hidden")
+            editProfile.classList.add("input--error")
+            hasError = true
+        } else {
+            editProfileErr.classList.add("hidden")
+            editProfile.classList.remove("input--error")
+        }
+        if (editUrlImage.value === "") {
+            editImageErr.classList.remove("hidden")
+            editUrlImage.classList.add("input--error")
+            hasError = true
+        } else {
+            editImageErr.classList.add("hidden")
+            editUrlImage.classList.remove("input--error")
+        }
+        return hasError
+    }
 }
