@@ -18,6 +18,8 @@ export default class editHabitController {
             formInputs.forEach(input => {
                 if(input.tagName != 'BUTTON' && input.type != 'checkbox') {
                     this.alterationsObject[input.name] = input.value
+                } else if(input.className === 'select-custom') {
+                    this.alterationsObject.habit_category = input.id
                 }
             })
 

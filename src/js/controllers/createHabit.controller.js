@@ -13,9 +13,12 @@ export default class createHabit {
       const dados = {};
       const formValue = [...e.target.form];
       formValue.forEach((input) => {
-        if (input.value !== "") {
+        if (input.tagName != 'BUTTON') {
           dados[input.name] = input.value;
+        } else if(input.className === 'select-custom--create') {
+          dados.habit_category = input.id
         }
+        console.log(dados)
       });
         if (MainView.messageError() === false) {
             const request = await Api.createHabit(dados);
