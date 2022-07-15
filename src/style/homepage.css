@@ -51,6 +51,10 @@ body {
     position: relative;
 }
 
+.img--header {
+    cursor: pointer;
+}
+
 .img--header, .img--subheader {
     object-fit: cover;
 }
@@ -132,6 +136,10 @@ body {
     height: 10px;
     background-color: white;
     clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+.wrapper__edit, .wrapper__logout {
+    cursor: pointer;
 }
 
 .container-seta {
