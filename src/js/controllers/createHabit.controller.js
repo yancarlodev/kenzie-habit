@@ -18,7 +18,6 @@ export default class createHabit {
         } else if(input.className === 'select-custom--create') {
           dados.habit_category = input.id
         }
-        console.log(dados)
       });
         if (MainView.messageError() === false) {
             const request = await Api.createHabit(dados);
@@ -30,6 +29,10 @@ export default class createHabit {
             setTimeout(() => {
                 popUp.classList.add("hidden");
             }, 3000)
+
+            formValue.forEach((input) => {
+                input.value = ''
+            });
           } 
       });
   }

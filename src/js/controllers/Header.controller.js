@@ -125,6 +125,9 @@ export default class Header {
         setTimeout(() => {
             popUp.classList.add("hidden");
         }, 3000)
+
+        inputImg.value = ''
+        inputName.value = ''
       }
   });
 }
