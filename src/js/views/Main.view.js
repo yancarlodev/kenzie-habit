@@ -4,6 +4,10 @@ export default class MainView {
     static async renderAllHabits(habitsList) {
         const tableBody = document.querySelector('.habits__table-body')
         const habitListAwaited = await habitsList
+        habitListAwaited.sort((currentHabit, nextHabit) => {
+            return nextHabit.habit_id - currentHabit.habit_id
+        })
+        
         tableBody.innerHTML = ''
         let accumulator = 0
 
