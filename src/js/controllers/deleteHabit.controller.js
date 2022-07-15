@@ -26,7 +26,9 @@ export default class Delete {
       const id = e.target.id;
      
       const deleteRequest = await Api.habitDelete(id); 
-      MainView.renderAllHabits(Api.habitReadAll())
+      const read = await Api.habitReadAll()
+      const ordenados = read.sort((a,b) => b.habit_id - a.habit_id)
+      MainView.renderAllHabits(ordenados)
       modalDelete.classList.add("hidden")
       
       popUp.classList.remove("hidden");

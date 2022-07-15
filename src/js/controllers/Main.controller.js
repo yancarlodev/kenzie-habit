@@ -27,16 +27,16 @@ export default class Main {
 
     static async showAllComplets() {
         const button = document.querySelector("#postsConcluded");
-        const posts = await Api.habitReadAll();
         const tableBody = document.querySelector('.habits__table-body');
 
         button.addEventListener("click", async event => {
             const posts = await Api.habitReadAll()
+            const ordenados = posts.sort((a,b) => b.habit_id - a.habit_id)
             event.preventDefault()
 
             tableBody.innerHTML = "";
             
-            const truePosts = posts.filter(post => {
+            const truePosts = ordenados.filter(post => {
                 if (post.habit_status) {
                     return true
                 }
@@ -51,10 +51,11 @@ export default class Main {
         
         buttonTodos.addEventListener("click", async event => {
             const todos = await Api.habitReadAll()
+            const ordenados = todos.sort((a,b) => b.habit_id - a.habit_id)
             event.preventDefault()
 
             tableBody.innerHTML = ""
-            await MainView.renderAllHabits(todos)
+            await MainView.renderAllHabits(ordenados)
         })
     }
 
@@ -127,9 +128,11 @@ export default class Main {
     static loadMoreButton() {
         const button = document.querySelector('.load-more')
         
-        button.addEventListener('click', event => {
+        button.addEventListener('click', async event => {
             MainView.rangeNumber += 10
-            MainView.renderAllHabits(Api.habitReadAll())
+            const read = await Api.habitReadAll()
+            const ordenados = read.sort((a,b) => b.habit_id - a.habit_id)
+            MainView.renderAllHabits(ordenados)
         })
     }
 }
