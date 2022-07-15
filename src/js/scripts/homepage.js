@@ -6,6 +6,7 @@ import MainView from "../views/Main.view.js";
 import Api from "../models/Api.model.js";
 import editHabitController from "../controllers/editHabit.controller.js";
 import Anonymous from "../views/Anonymous.js";
+import CustomSelect from "../controllers/CustomSelect.controller.js";
 
 
 Anonymous.redirectLogin()
@@ -15,6 +16,8 @@ Header.editProfile();
 Header.logout();
 Header.getInputsEditProfile();
 
+CustomSelect.getUserClick()
+CustomSelect.getUserClickCreate()
 Main.clickButttonCreate()
 Main.showAllComplets()
 Main.showAll()

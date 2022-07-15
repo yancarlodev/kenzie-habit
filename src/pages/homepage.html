@@ -129,13 +129,23 @@
                         <p class="text-3 text-3--error hidden" id="description_error">Campo obrigatório!</p>
 
                     <label class="text-3" for="habit_category">Categoria</label>
+                    <section class="select-container">
+                        <button class="select-custom--create" type="button">
+                            <p class="text-2 selector--create">Selecionar categoria</p>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </button>
+                
+                        <ul class="option-container--create hidden">
+                        </ul>
+                    </section>
+                    <!-- <label class="text-3" for="habit_category">Categoria</label>
                     <select class="input" name="habit_category" id="habit_category">
                         <option value="casa">Casa</option>
                         <option value="estudos">Estudo</option>
                         <option value="lazer">Lazer</option>
                         <option value="trabalho">Trabalho</option>
                         <option value="saude">Saúde</option>
-                    </select>
+                    </select> -->
 
                     <button class="button button--big button-inserir" type="submit">Inserir</button>
                 </form>
@@ -162,13 +172,16 @@
                         placeholder="Digitar descrição"></textarea>
 
                     <label class="text-3" for="habit_category">Categoria</label>
-                    <select class="input" name="habit_category" id="habit_category">
-                        <option value="casa">Casa</option>
-                        <option value="estudos">Estudo</option>
-                        <option value="lazer">Lazer</option>
-                        <option value="trabalho">Trabalho</option>
-                        <option value="saude">Saúde</option>
-                    </select>
+                    <section class="select-container">
+                        <button class="select-custom" type="button">
+                            <p class="text-2 selector">Selecionar categoria</p>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </button>
+                
+                        <ul class="option-container hidden">
+                        </ul>
+                    </section>
+
                     <div class="status-row">
                         <h2 class="text-2--500">Status</h2>
                         <input class="checkbox" type="checkbox" name="habit_status" id="habit_status" />

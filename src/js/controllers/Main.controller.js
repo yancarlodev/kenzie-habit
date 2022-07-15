@@ -1,5 +1,6 @@
 import Api from "../models/Api.model.js";
 import MainView from "../views/Main.view.js";
+import CustomSelect from "./CustomSelect.controller.js";
 import editHabitController from "./editHabit.controller.js";
 
 export default class Main {
@@ -61,7 +62,7 @@ export default class Main {
         const tableBody = document.querySelector('.habits__table-body')
         const editModal = document.querySelector('#edit-modal')
         const editForm = document.querySelector('.modal-edit-habito-form')
-        const popUp = document.querySelector(".container_pop-up_edit-habit")
+        const selector = document.querySelector('.selector')
         
         tableBody.addEventListener('click', async event => {
             if (event.target.tagName === 'BUTTON') {
@@ -84,6 +85,22 @@ export default class Main {
                         } else {
                             input.checked = habit[input.name]
                         }
+                    } else if(input.className === 'select-custom') {
+                        input.id = habit.habit_category
+                        selector.innerHTML = ''
+                        
+                        const indexOfOption = CustomSelect.optionsArray.findIndex(({id}) => id === habit.habit_category)
+
+                        const option = CustomSelect.optionsArray[indexOfOption]
+
+                        const icon = document.createElement('i')
+                        icon.classList.add('fa-solid', option.iconClass, 'select-icon')
+
+                        const optionText = document.createElement('p')
+                        optionText.innerText = option.text
+                        optionText.classList.add('no-pointer-event')
+
+                        selector.append(icon, optionText)
                     }
                 })
 
