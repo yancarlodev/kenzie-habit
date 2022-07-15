@@ -1,10 +1,10 @@
 import Api from "../models/Api.model.js";
-import Main from "./Main.controller.js";
 import MainView from "../views/Main.view.js";
 
 export default class Delete {
   static deleleHabit() {
     const button = document.querySelector(".delete-button");
+    const popUp = document.querySelector('.container_pop-up_create-user')
     const modalDelete = document.querySelector(".container_delete-habit");
     const modalEdit = document.querySelector("#edit-modal");
     const backButton = document.querySelector("#cancelar");
@@ -28,7 +28,12 @@ export default class Delete {
       const deleteRequest = await Api.habitDelete(id); 
       MainView.renderAllHabits(Api.habitReadAll())
       modalDelete.classList.add("hidden")
-      console.log(deleteRequest)
+      
+      popUp.classList.remove("hidden");
+        setTimeout(() => {
+            popUp.classList.add("hidden");
+        }, 3000)
+      
     });
     buttonExit.addEventListener("click", (e) => {
         modalDelete.classList.add("hidden")

@@ -22,7 +22,7 @@ export default class Api {
           "@kenzie-habit:user",
           JSON.stringify(res.response)
         );
-        console.log(res.response);
+
         localStorage.setItem("@kenzie-habit:token", JSON.stringify(res.token));
         return res;
       })
@@ -81,14 +81,14 @@ export default class Api {
   }
 
   static async editProfile(data) {
-    console.log(this.token);
+    
     return await fetch("https://habits-kenzie.herokuapp.com/api/user/profile", {
       method: "PATCH",
       headers: this.headers,
       body: JSON.stringify(data),
     })
       .then((response) => response.json())
-      .then((response) => console.log(response))
+      .then((response) => response)
       .catch((error) => console.log(error));
   }
 

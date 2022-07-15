@@ -1,4 +1,5 @@
 import Api from "../models/Api.model.js";
+import MainView from "../views/Main.view.js";
 
 export default class Header {
   static async userData() {
@@ -13,9 +14,7 @@ export default class Header {
       }
     )
       .then((res) => res.json())
-      .then((res) => {
-        console.log(res);
-      })
+      .then((res) => res)
       .catch((error) => error);
     return response;
   }
@@ -102,6 +101,7 @@ export default class Header {
     const form = document.querySelector(".modal-crair-habito-form");
     const button = document.querySelector("#button-save");
     const section = document.querySelector("#containerProfileModal");
+    const popUp = document.querySelector('.container_pop-up_edit-profile')
 
     button.addEventListener("click", async (e) => {
       e.preventDefault();
@@ -113,14 +113,24 @@ export default class Header {
         usr_image: inputImg.value,
       };
 
+      if (MainView.messageErrorProfile() === false) { 
       await Api.editProfile(obj);
 
       localStorage.setItem("@kenzie-habit:user", JSON.stringify(obj));
 
       await this.changeUserImgAndName(obj);
       section.classList.add("hidden");
-    });
-  }
+
+      popUp.classList.remove("hidden");
+        setTimeout(() => {
+            popUp.classList.add("hidden");
+        }, 3000)
+
+        inputImg.value = ''
+        inputName.value = ''
+      }
+  });
+}
 
   static async changeUserImgAndName(user) {
     let obj = {

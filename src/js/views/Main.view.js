@@ -91,4 +91,57 @@ export default class MainView {
             }
         })
     }
+    static messageError() {
+        const title = document.querySelector("#habit_title")
+        const description = document.querySelector("#habit_description")
+        let hasError = false
+
+        const titleErr = document.querySelector("#title_error")
+        const descriptionErr = document.querySelector("#description_error")
+
+        if (title.value === "") {
+            titleErr.classList.remove("hidden")
+            title.classList.add("input--error")
+            hasError = true
+        } else {
+            titleErr.classList.add("hidden")
+            title.classList.remove("input--error")
+        }
+        if (description.value === "") {
+            descriptionErr.classList.remove("hidden")
+            description.classList.add("input--error")
+            hasError = true
+        } else {
+            descriptionErr.classList.add("hidden")
+            description.classList.remove("input--error")
+        }
+        return hasError
+    }
+
+    static messageErrorProfile() {
+        const editProfile = document.querySelector("#inputName")
+        const editUrlImage = document.querySelector("#inputImg")
+        let hasError = false
+
+        const editProfileErr = document.querySelector("#nameErr")
+        const editImageErr = document.querySelector("#urlImageErr")
+
+        if (editProfile.value === "") {
+            editProfileErr.classList.remove("hidden")
+            editProfile.classList.add("input--error")
+            hasError = true
+        } else {
+            editProfileErr.classList.add("hidden")
+            editProfile.classList.remove("input--error")
+        }
+        if (editUrlImage.value === "") {
+            editImageErr.classList.remove("hidden")
+            editUrlImage.classList.add("input--error")
+            hasError = true
+        } else {
+            editImageErr.classList.add("hidden")
+            editUrlImage.classList.remove("input--error")
+        }
+        return hasError
+    }
 }
